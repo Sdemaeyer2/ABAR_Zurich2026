@@ -1,0 +1,9 @@
+---
+title: "Applied Bayaesian Analysis in R (Zurich 2026)"
+---
+
+bla bla bal
+
+## Open Leer Pakket
+
+bla bla bla 

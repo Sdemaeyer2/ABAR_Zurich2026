@@ -1,0 +1,212 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Applied Bayaesian Analysis in R (Zurich 2026)",
+    "section": "",
+    "text": "bla bla bal",
+    "crumbs": [
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "index.html#open-leer-pakket",
+    "href": "index.html#open-leer-pakket",
+    "title": "Applied Bayaesian Analysis in R (Zurich 2026)",
+    "section": "Open Leer Pakket",
+    "text": "Open Leer Pakket\nbla bla bla",
+    "crumbs": [
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "Prerequisites/Prerequisites.html",
+    "href": "Prerequisites/Prerequisites.html",
+    "title": "Prerequisites",
+    "section": "",
+    "text": "For the workshop we will be using R. To be able to participate properly, it is advisable to install a number of packages on your own PC beforehand, as well as to become familiar with the way I usually code in R. This document is a brief guide to help you prepare.",
+    "crumbs": [
+      "Prerequisites"
+    ]
+  },
+  {
+    "objectID": "Prerequisites/Prerequisites.html#cmdstan-cmdstanr",
+    "href": "Prerequisites/Prerequisites.html#cmdstan-cmdstanr",
+    "title": "Prerequisites",
+    "section": "CmdStan & CmdStanR",
+    "text": "CmdStan & CmdStanR\nBayesian estimation and analyses require some dedicated samplers that should be installed on your machine. The workflow that we will cover in the workshop relies on Stan software. Stan stands alone from R but can be called through R making use of two different ways. We will cover this more in the workshop.\nFor the workshop I will use the CmdStan chain and the package cmdstanr. Therefore, I would encourage you to download and install a working cmdstan and cmdstanr. The following vignette can help you accomplish this: https://mc-stan.org/cmdstanr/articles/cmdstanr.html\nNormally if you follow the steps described in that vignette you will succeed in installing and testing your installation.",
+    "crumbs": [
+      "Prerequisites"
+    ]
+  },
+  {
+    "objectID": "Prerequisites/Prerequisites.html#brms",
+    "href": "Prerequisites/Prerequisites.html#brms",
+    "title": "Prerequisites",
+    "section": "brms",
+    "text": "brms\nFor the analyses we will rely on the amazing package brms. Installing this package is not that difficult, but maybe install before the workshop and start some exploring ;-)",
+    "crumbs": [
+      "Prerequisites"
+    ]
+  },
+  {
+    "objectID": "Prerequisites/Prerequisites.html#tidyverse",
+    "href": "Prerequisites/Prerequisites.html#tidyverse",
+    "title": "Prerequisites",
+    "section": "tidyverse",
+    "text": "tidyverse\nWhen I code I use the functional programming  approach and a lot of the tidy principles (see below). The package tidyverse bundles a set of packages that are needed for this approach to coding. If you want to learn more on the whole universe of tidyverse you can explore the book of Hadley Wickham: https://r4ds.had.co.nz/",
+    "crumbs": [
+      "Prerequisites"
+    ]
+  },
+  {
+    "objectID": "Prerequisites/Prerequisites.html#ggplot2",
+    "href": "Prerequisites/Prerequisites.html#ggplot2",
+    "title": "Prerequisites",
+    "section": "ggplot2",
+    "text": "ggplot2\nPart of the tidyverse package is the ggplot2 package. Therefore it will be installed if you also install tidyverse normally. Nevertheless, I find it worth mentioning separately because I think knowing how to make graphs with ggplot2 is very handy even if you do not dive into bayesian analyses. A great resource to learn to visualize your data is the tutorial written by Cédric Scherer: https://www.cedricscherer.com/2019/08/05/a-ggplot2-tutorial-for-beautiful-plotting-in-r/!\nHe also blogs on creating great visualizations and has some nice talks that I think you can find on YouTube!",
+    "crumbs": [
+      "Prerequisites"
+    ]
+  },
+  {
+    "objectID": "Prerequisites/Prerequisites.html#patchwork",
+    "href": "Prerequisites/Prerequisites.html#patchwork",
+    "title": "Prerequisites",
+    "section": "patchwork",
+    "text": "patchwork\nI mention this package separately as well. patchwork allows you to combine different plots created with ggplot2. This package should be installed on it’s own.",
+    "crumbs": [
+      "Prerequisites"
+    ]
+  },
+  {
+    "objectID": "Prerequisites/Prerequisites.html#tidybayes",
+    "href": "Prerequisites/Prerequisites.html#tidybayes",
+    "title": "Prerequisites",
+    "section": "tidybayes",
+    "text": "tidybayes\nThis package is a dedicated package to make use of the tidy principles when applying it to (results of) Bayesian analyses.",
+    "crumbs": [
+      "Prerequisites"
+    ]
+  },
+  {
+    "objectID": "Prerequisites/Prerequisites.html#bayesplot",
+    "href": "Prerequisites/Prerequisites.html#bayesplot",
+    "title": "Prerequisites",
+    "section": "bayesplot",
+    "text": "bayesplot\nWe will use visualisations a lot in Bayesian analyses to summarize the information of models and parameter estimation. bayesplot bundles a number of functions that make this visualizing much easier (although it uses ggplot2 under the hood so we could accomplish similar results just knowing ggplot2).",
+    "crumbs": [
+      "Prerequisites"
+    ]
+  },
+  {
+    "objectID": "Prerequisites/Prerequisites.html#the-pipe",
+    "href": "Prerequisites/Prerequisites.html#the-pipe",
+    "title": "Prerequisites",
+    "section": "The pipe",
+    "text": "The pipe\nWhen coding I make use of what is called the pipe operator (notice that you can only use this when you loaded the tidyverse package).\nThe pipe in R code is the following: %&gt;%\nWhat is nice about using the pipe operator is that you can read a piece of code from left to right focussing on the verbs (as Hadley Wickham will call it sometimes).\nA short example.\nImagine you have a vector of numbers for which you want to calculate a mean: c(1,2,3,4,5).\nThere are different ways to do this in R.\nA first one is doing it in separate lines of code:\n\nx &lt;- c(1,2,3,4,5)\nmean(x)\n\n[1] 3\n\n\nFor this easy example this would work fine. But a typical side-effect of working this way is that we create a lot of objects along the way. Here we created the object x that stored the values of the vector.\nTo avoid this we could combine all the code in one line by embedding functions:\n\nmean(c(1,2,3,4,5))\n\n[1] 3\n\n\nOne line of code and no storage of a new object. But this can get complicated if you want to combine a set of functions resulting in almost non-readable code!\nThen there is the pipe operator:\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nc(1,2,3,4,5) %&gt;%\n  mean()\n\n[1] 3\n\n\nThis is how to read this code:\n\nc(1,2,3,4,5) %&gt;% # create the vector and then\n  mean()         # calculate the mean\n\n[1] 3\n\n\nSo the pipe can be read as take (or create) A and then do B with the result. We could create a whole pipeline of functions to be applied in this way making use of the pipe operator (this becomes more clear in the next section when we shortly describe the dplyr verbs).\nA tweet that I encountered gives a great analogy. Using the pipe you could write:\n\nI %&gt;% woke up %&gt;% took a shower %&gt;% got breakfast %&gt;% took the metro %&gt;% arrived at work %&gt;% …\n\nIn a recent update of R they also introduced this idea of a pipe as a “native pipe”. This is written as |&gt; and functions in a similar way as %&gt;% with the advantage that it will also work outside the tidyverse. I’m slowly transforming all my material and code to make use of this native pipe. But as I am notoriously sloppy, the chances are high that you will encounter some old-fashioned tidyverse pipes in my code during the workshop…\n\nI |&gt; learned about the native pipe |&gt; transformed my code |&gt; potentially failed somewhere …",
+    "crumbs": [
+      "Prerequisites"
+    ]
+  },
+  {
+    "objectID": "Prerequisites/Prerequisites.html#dplyr-verbs",
+    "href": "Prerequisites/Prerequisites.html#dplyr-verbs",
+    "title": "Prerequisites",
+    "section": "dplyr verbs",
+    "text": "dplyr verbs\nWithin the tidyverse universe we can make use of a great package called dplyr for a broad spectrum of data-management functions. The functions provided in that package are also sometimes called verbs:\n\nmutate( ) to do recoding etc;\nselect( ) to select a subset of columns/variables;\nfilter( ) to filter cases;\ngroup_by( ) to apply what’s coming afterwards for specific groups in the data by a grouping variable;\narrange( ) to sort the data;\nsummarize( ) to apply summarizing functions (like taking the mean etc.);\nrename( ) to rename columns;\n\nThese functions can be combined in a single statement making use of the pipe operator.\nHere are some examples on the use of these verbs applied to the built-in dataset starwars that is part of the tidyverse package.\nCalculate the mean birth_year for all the characters:\n\nstarwars |&gt; \n  summarize(\n    mean_birth_year = mean(birth_year, na.rm = TRUE)\n    ) |&gt;\n  print()\n\n# A tibble: 1 × 1\n  mean_birth_year\n            &lt;dbl&gt;\n1            87.6\n\n\nCalculate the average height and the average mass by gender:\n\nstarwars |&gt;\n  group_by(gender) |&gt;\n  summarize(\n    mean_height = mean(height, na.rm = T),\n    mean_mass = mean(mass, na.rm = T)\n  ) \n\n# A tibble: 3 × 3\n  gender    mean_height mean_mass\n  &lt;chr&gt;           &lt;dbl&gt;     &lt;dbl&gt;\n1 feminine         167.      54.7\n2 masculine        177.     107. \n3 &lt;NA&gt;             175       81  \n\n\nNow, let’s use the verbs to create a graph. We want to create a scatterplot with mass on the x-axis and height on the y-axis. Also, we want to add a third variable in the mix: whether the character’s birth year is hither than 50 or not (just for fun). Finally, we only want to show characters that have a mass lower than 200 and with a birth_year that is known.\n\nstarwars |&gt;\n  # First filter the cases with a mass higher than 200 and for which birth_year is not NA\n  filter(\n    mass &lt; 200,\n    !is.na(birth_year)\n  ) |&gt;\n\n  # Then we create a variable that has value yes if the character's birth year is above 50 and no otherwise\n  mutate(\n    birth_above_50 = if_else(birth_year &gt; 50, \"yes\", \"no\") \n  ) |&gt;\n  \n  # Select the necessary variables for the graph (not really necessary but this is to show this option)\n  select(\n    height, \n    mass, \n    birth_above_50) |&gt;\n\n  # Create the graph\n  ggplot(\n    aes(x = mass, y = height, color = birth_above_50)\n  ) + geom_point()",
+    "crumbs": [
+      "Prerequisites"
+    ]
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About me",
+    "section": "",
+    "text": "I’m an R-enthusiast teaching statistics for behavioral researchers from an applied point of view. My main mission is to get people enthusiastic on the wonderful world of statistics.\nIn 2020, I started deep-diving into the world of Bayesian analyses during my sabbatical leave in full Covid times. The last 5 years I had the nice opportunity to share my learning with others in the form of different workshops (also here in Turku) and by writing some blog-posts to process what I learned myself.\nOne of my key values is Open Scholarship, sharing all research and teaching materials as open as possible for the broad (academic) audience. If you want to dive into my other materials and irregular blog-posts you can visit my website: Sven’s sharing place.\nI wish you a pleasant learning journey!",
+    "crumbs": [
+      "About me"
+    ]
+  },
+  {
+    "objectID": "about.html#contact",
+    "href": "about.html#contact",
+    "title": "About me",
+    "section": "Contact",
+    "text": "Contact\nQuestions or feedback, do not hesitate to contact me at sven.demaeyer@uantwerpen.be",
+    "crumbs": [
+      "About me"
+    ]
+  },
+  {
+    "objectID": "Links.html",
+    "href": "Links.html",
+    "title": "Links",
+    "section": "",
+    "text": "Many books are written that discuss Bayesian modelling. Here you can find two books that I would suggest for learning more about Bayesian analyses.\nA first book is the book by Ben Lambert: “A Student’s Guide to Bayesian Statistics”. This book is great if you want to learn more about the statistical theory behind Bayesian analyses and MCMC sampling. He succeeds in explaining these topics in a thorough conceptual way, without you getting lost in the mathematics and formulas. For me, this book was of great value!\nA big hit these days is the book by  Richard McElreath: “Statistical Rethinking. A Bayesian Course with examples in R and Stan” . In this course, Richard McElreath introduces statistical reasoning from scratch, integrating three key components for good statistical thinking: DAGs, Bayesian statistics, and multi-level models. So, this book is more than solely a book about Bayesian models. The lectures of Richard McElreath based on this book can be found for free on YouTube.",
+    "crumbs": [
+      "Links"
+    ]
+  },
+  {
+    "objectID": "Links.html#reading-tips",
+    "href": "Links.html#reading-tips",
+    "title": "Links",
+    "section": "",
+    "text": "Many books are written that discuss Bayesian modelling. Here you can find two books that I would suggest for learning more about Bayesian analyses.\nA first book is the book by Ben Lambert: “A Student’s Guide to Bayesian Statistics”. This book is great if you want to learn more about the statistical theory behind Bayesian analyses and MCMC sampling. He succeeds in explaining these topics in a thorough conceptual way, without you getting lost in the mathematics and formulas. For me, this book was of great value!\nA big hit these days is the book by  Richard McElreath: “Statistical Rethinking. A Bayesian Course with examples in R and Stan” . In this course, Richard McElreath introduces statistical reasoning from scratch, integrating three key components for good statistical thinking: DAGs, Bayesian statistics, and multi-level models. So, this book is more than solely a book about Bayesian models. The lectures of Richard McElreath based on this book can be found for free on YouTube.",
+    "crumbs": [
+      "Links"
+    ]
+  },
+  {
+    "objectID": "Links.html#some-free-online-books",
+    "href": "Links.html#some-free-online-books",
+    "title": "Links",
+    "section": "Some free online books ",
+    "text": "Some free online books \n\nJohn Kruschke’s book Doing Bayesian Data Analyses: a tutorial with R, Jags, and Stan :\n\nhttps://nyu-cdsc.github.io/learningr/assets/kruschke_bayesian_in_R.pdf\n\nBayes Rules!:\n\nhttps://www.bayesrulesbook.com/\n\nOr this book:\n\n https://vasishth.github.io/bayescogsci/book/",
+    "crumbs": [
+      "Links"
+    ]
+  },
+  {
+    "objectID": "Links.html#the-podcast",
+    "href": "Links.html#the-podcast",
+    "title": "Links",
+    "section": "THE Podcast ",
+    "text": "THE Podcast \nIf you like running - like I do - this could be a great companion on your run! In this podcast different guests from different backgrounds discuss the power and reasoning behind Bayesian analyses and how Bayesian statistics are used in their field from Astronomy, over Psychology to Sports Analyses (and many more).\nhttps://www.learnbayesstats.com/",
+    "crumbs": [
+      "Links"
+    ]
+  },
+  {
+    "objectID": "Links.html#online-learning-material",
+    "href": "Links.html#online-learning-material",
+    "title": "Links",
+    "section": "Online learning material",
+    "text": "Online learning material\nThe research group of Rens van de Schoot (Utrecht University) publishes a lot on Bayesian statistics. They also developed a summer school. Their materials are also openly available at (you will notice how their way of sharing materials has inspired me :-))\nhttps://utrechtuniversity.github.io/BayesianEstimation/#quick-overview",
+    "crumbs": [
+      "Links"
+    ]
+  },
+  {
+    "objectID": "Links.html#some-example-papers",
+    "href": "Links.html#some-example-papers",
+    "title": "Links",
+    "section": "Some example papers",
+    "text": "Some example papers\nHere are some references to articles reporting on Bayesian analyses.\nGijsen, M., Catrysse, L., De Maeyer, S., & Gijbels, D. (2024). Mapping cognitive processes in video-based learning by combining trace and think-aloud data. Learning and Instruction, 90, 101851. https://doi.org/10.1016/j.learninstruc.2023.101851 \nRoeser, J., De Maeyer, S., Leijten, M., & Van Waes, L. (2021). Modelling typing disfluencies as finite mixture process. Reading and Writing.  https://doi.org/10.1007/s11145-021-10203-z",
+    "crumbs": [
+      "Links"
+    ]
+  },
+  {
+    "objectID": "Links.html#article-on-bayesian-evidence-interval",
+    "href": "Links.html#article-on-bayesian-evidence-interval",
+    "title": "Links",
+    "section": "Article on Bayesian Evidence Interval",
+    "text": "Article on Bayesian Evidence Interval\nDuring the course I mentioned a paper that criticises the ROPE + HDI rule and proposes an alternative for making decisions on hypotheses in the Bayesian realm. This is the reference:\nKelter, R. (2022), The evidence interval and the Bayesian evidence value: On a unified theory for Bayesian hypothesis testing and interval estimation. Br J Math Stat Psychol, 75: 550-592.\n https://doi.org/10.1111/bmsp.12267",
+    "crumbs": [
+      "Links"
+    ]
+  }
+]
