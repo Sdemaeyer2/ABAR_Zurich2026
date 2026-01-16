@@ -1,5 +1,7 @@
 ---
-title: "Prerequisites"
+title: "Prerequisites for the workshop Applied Bayesian Analyses in R"
+author: "Sven De Maeyer"
+date: "`r Sys.Date()`"
 format: html
 ---
 

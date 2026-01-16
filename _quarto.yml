@@ -1,47 +1,65 @@
 project:
   type: website
+  render:
+    - index.qmd
+    - Prerequisites/Prerequisites.qmd
+    - Part1.qmd
+    - Part2.qmd
+    - Part3.qmd
+    - Part4.qmd
+    - WAMBS.qmd
+    - Links.qmd
+    - about.qmd
+    - Presentations/Part1/Slides_Part1.qmd
+    - Presentations/Part2/Slides_Part2.qmd
+    - Presentations/Part3/Slides_Part3.qmd
+    - Integrated_exercise/Exercise.qmd
+    - Integrated_exercise/Exercise_response.qmd
 
-extensions:
-  - r-wasm/quarto-live
+profile:
+  default: en
+
+# WEBSITE ARCHITECTURE
 
 website:
-  announcement: 
-    icon: info-circle
-    dismissable: true
-    content: "**Alert** - under construction - feedback is welcome sven.demaeyer@uantwerpen.be"
-    type: primary
-    position: above-navbar
-  title: "ABAR - Zurich 2026"
+  favicon: "BAR_Zurich2026_Favicon.png"
   page-navigation: true
+  back-to-top-navigation: true
   reader-mode: true
   page-footer:
-    right: "Made with a lot of ❤ and [Quarto](https://quarto.org/)."
-    left: "&copy; CC-By University of Antwerp, 2026"
-
-  sidebar: 
-    style: "docked"
-    background: "#ADA601"
-    foreground: "#FFFFFF"
+    right: "This page is built with ❤️ and [Quarto](https://quarto.org/)."
+    left: "&copy; CC-By Sven De Maeyer, 2026"
+  
+  sidebar:
+    logo: "BAR_Zurich2026.png"
     pinned: true
-    search: true
     align: center
-    border: false
-    collapse-level: 1
-    contents: 
-      - text: "Welcome"
-        href: index.qmd
-      - text: "Prerequisites"
-        href: Prerequisites/Prerequisites.qmd
-      - text: "Links"
-        href: Links.qmd
-      - text: "About me"
-        href: about.qmd
-    tools: 
+    background: "#e9f3fa"
+    search: true
+    tools:
       - icon: github
-        href: https://github.com/Sdemaeyer2/STATB_2425
-        text: "Statistiek B"
+        href: https://github.com/Sdemaeyer2/ABAR_TURKU_2025
 
-lang: en
+    style: "docked"
+    contents:
+      - href: index.qmd
+        text: Home
+      - href: Prerequisites/Prerequisites.qmd
+        text: Prerequisites
+      - href: Part1.qmd
+        text: Part1
+      - href: Part2.qmd
+        text: Part2
+      - href: Part3.qmd
+        text: Part3
+      - href: Part4.qmd
+        text: Part4
+      - href: WAMBS.qmd
+        text: WAMBS template
+      - href: Links.qmd
+        text: Links
+      - href: about.qmd
+        text: About me
 
 format:
   html:
@@ -50,4 +68,5 @@ format:
     toc: true
     code-copy: true
     code-overflow: wrap
-    
+
+

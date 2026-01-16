@@ -10,5 +10,26 @@
   },
   "Links.qmd": {
     "Links.html": "1d4c3da3"
+  },
+  "WAMBS.qmd": {
+    "WAMBS.html": "0e808696"
+  },
+  "Presentations/Part1/Slides_Part1.qmd": {
+    "Slides_Part1.html": "786f6616"
+  },
+  "Presentations/Part2/Slides_Part2.qmd": {
+    "Slides_Part2.html": "fc589480"
+  },
+  "Presentations/Part3/Slides_Part3.qmd": {
+    "Slides_Part3.html": "273aaf8b"
+  },
+  "Integrated_exercise/Exercise.qmd": {
+    "Exercise.html": "57b1b57f"
+  },
+  "Integrated_exercise/Exercise_response.qmd": {
+    "Exercise_response.html": "7716dcbf"
+  },
+  "Part1.qmd": {
+    "Part1.html": "ea97ec32"
   }
 }
