@@ -4,9 +4,9 @@
     "href": "index.html",
     "title": "Introduction to Bayesian Analyses with R (Zurich 2026)",
     "section": "",
-    "text": "In a broad range of scientific disciplines, Bayesian statistics are gaining popularity. Yet the basic training of most researchers only introduces the frequentist framework for statistical inference. This workshop aims to introduce Bayesian statistics in a practical way, laying a foundation for crucial concepts in the Bayesian realm.\nParticipants will be introduced to a workflow for Bayesian analyses in the open-source environment R. The starting point will be the linear model (aka regression model) and we can extend this to linear mixed models. The central piece of software will be the brms package in R, that bridges the typical R modelling language with Stan, which is a probabilistic programming language built to estimate models within the Bayesian framework. Given that a workflow in R will be introduced, it is advised that participants have some experience working with R. Moreover, packages will be used from the tidyverse (e.g., dplyr, ggplot2, …). Therefore, we advise participants to acknowledge themselves with these packages.",
+    "text": "In a broad range of scientific disciplines, Bayesian statistics are gaining popularity. Yet the basic training of most researchers only introduces the frequentist framework for statistical inference. This workshop aims to introduce Bayesian statistics in a practical way, laying a foundation for crucial concepts in the Bayesian realm.\nParticipants will be introduced to a workflow for Bayesian analyses in the open-source environment R. The starting point will be the linear model (aka regression model) and we can extend this to linear mixed models.\nThe central piece of software will be the brms package in R, that bridges the typical R modelling language with Stan, which is a probabilistic programming language built to estimate models within the Bayesian framework.\nGiven that a workflow in R will be introduced, it is advised that participants have some experience working with R. Moreover, packages will be used from the tidyverse (e.g., dplyr, ggplot2, …). Therefore, we advise participants to acknowledge themselves with these packages. For more info on how to prepare for the workshop, go to the Prerequisites.",
     "crumbs": [
-      "Home"
+      "Welcome"
     ]
   },
   {
@@ -26,7 +26,7 @@
     "section": "Schedule",
     "text": "Schedule\n\n\n\nWhen?\nWhere\n\n\n\n\nThursday 5th of February\n\n\n\nFriday 6th of February\n\n\n\n\nThis site bundles all the material used for the course. Or you can download all the materials on the github page .",
     "crumbs": [
-      "Home"
+      "Welcome"
     ]
   },
   {
@@ -809,7 +809,7 @@
   {
     "objectID": "Prerequisites/Prerequisites.html",
     "href": "Prerequisites/Prerequisites.html",
-    "title": "Prerequisites for the workshop Applied Bayesian Analyses in R",
+    "title": "Prerequisites for the workshop Bayesian Analyses in R",
     "section": "",
     "text": "For the workshop we will be using R. To be able to participate properly, it is advisable to install a number of packages on your own PC beforehand, as well as to become familiar with the way I usually code in R. This document is a brief guide to help you prepare.",
     "crumbs": [
@@ -819,7 +819,7 @@
   {
     "objectID": "Prerequisites/Prerequisites.html#cmdstan-cmdstanr",
     "href": "Prerequisites/Prerequisites.html#cmdstan-cmdstanr",
-    "title": "Prerequisites for the workshop Applied Bayesian Analyses in R",
+    "title": "Prerequisites for the workshop Bayesian Analyses in R",
     "section": "CmdStan & CmdStanR",
     "text": "CmdStan & CmdStanR\nBayesian estimation and analyses require some dedicated samplers that should be installed on your machine. The workflow that we will cover in the workshop relies on Stan software. Stan stands alone from R but can be called through R making use of two different ways. We will cover this more in the workshop.\nFor the workshop I will use the CmdStan chain and the package cmdstanr. Therefore, I would encourage you to download and install a working cmdstan and cmdstanr. The following vignette can help you accomplish this: https://mc-stan.org/cmdstanr/articles/cmdstanr.html\nNormally if you follow the steps described in that vignette you will succeed in installing and testing your installation.",
     "crumbs": [
@@ -829,7 +829,7 @@
   {
     "objectID": "Prerequisites/Prerequisites.html#brms",
     "href": "Prerequisites/Prerequisites.html#brms",
-    "title": "Prerequisites for the workshop Applied Bayesian Analyses in R",
+    "title": "Prerequisites for the workshop Bayesian Analyses in R",
     "section": "brms",
     "text": "brms\nFor the analyses we will rely on the amazing package brms. Installing this package is not that difficult, but maybe install before the workshop and start some exploring ;-)",
     "crumbs": [
@@ -839,7 +839,7 @@
   {
     "objectID": "Prerequisites/Prerequisites.html#tidyverse",
     "href": "Prerequisites/Prerequisites.html#tidyverse",
-    "title": "Prerequisites for the workshop Applied Bayesian Analyses in R",
+    "title": "Prerequisites for the workshop Bayesian Analyses in R",
     "section": "tidyverse",
     "text": "tidyverse\nWhen I code I use the functional programming  approach and a lot of the tidy principles (see below). The package tidyverse bundles a set of packages that are needed for this approach to coding. If you want to learn more on the whole universe of tidyverse you can explore the book of Hadley Wickham: https://r4ds.had.co.nz/",
     "crumbs": [
@@ -849,7 +849,7 @@
   {
     "objectID": "Prerequisites/Prerequisites.html#ggplot2",
     "href": "Prerequisites/Prerequisites.html#ggplot2",
-    "title": "Prerequisites for the workshop Applied Bayesian Analyses in R",
+    "title": "Prerequisites for the workshop Bayesian Analyses in R",
     "section": "ggplot2",
     "text": "ggplot2\nPart of the tidyverse package is the ggplot2 package. Therefore it will be installed if you also install tidyverse normally. Nevertheless, I find it worth mentioning separately because I think knowing how to make graphs with ggplot2 is very handy even if you do not dive into bayesian analyses. A great resource to learn to visualize your data is the tutorial written by Cédric Scherer: https://www.cedricscherer.com/2019/08/05/a-ggplot2-tutorial-for-beautiful-plotting-in-r/!\nHe also blogs on creating great visualizations and has some nice talks that I think you can find on YouTube!",
     "crumbs": [
@@ -859,7 +859,7 @@
   {
     "objectID": "Prerequisites/Prerequisites.html#patchwork",
     "href": "Prerequisites/Prerequisites.html#patchwork",
-    "title": "Prerequisites for the workshop Applied Bayesian Analyses in R",
+    "title": "Prerequisites for the workshop Bayesian Analyses in R",
     "section": "patchwork",
     "text": "patchwork\nI mention this package separately as well. patchwork allows you to combine different plots created with ggplot2. This package should be installed on it’s own.",
     "crumbs": [
@@ -869,7 +869,7 @@
   {
     "objectID": "Prerequisites/Prerequisites.html#tidybayes",
     "href": "Prerequisites/Prerequisites.html#tidybayes",
-    "title": "Prerequisites for the workshop Applied Bayesian Analyses in R",
+    "title": "Prerequisites for the workshop Bayesian Analyses in R",
     "section": "tidybayes",
     "text": "tidybayes\nThis package is a dedicated package to make use of the tidy principles when applying it to (results of) Bayesian analyses.",
     "crumbs": [
@@ -879,7 +879,7 @@
   {
     "objectID": "Prerequisites/Prerequisites.html#bayesplot",
     "href": "Prerequisites/Prerequisites.html#bayesplot",
-    "title": "Prerequisites for the workshop Applied Bayesian Analyses in R",
+    "title": "Prerequisites for the workshop Bayesian Analyses in R",
     "section": "bayesplot",
     "text": "bayesplot\nWe will use visualisations a lot in Bayesian analyses to summarize the information of models and parameter estimation. bayesplot bundles a number of functions that make this visualizing much easier (although it uses ggplot2 under the hood so we could accomplish similar results just knowing ggplot2).",
     "crumbs": [
@@ -889,7 +889,7 @@
   {
     "objectID": "Prerequisites/Prerequisites.html#the-pipe",
     "href": "Prerequisites/Prerequisites.html#the-pipe",
-    "title": "Prerequisites for the workshop Applied Bayesian Analyses in R",
+    "title": "Prerequisites for the workshop Bayesian Analyses in R",
     "section": "The pipe",
     "text": "The pipe\nWhen coding I make use of what is called the pipe operator (notice that you can only use this when you loaded the tidyverse package).\nThe pipe in R code is the following: %&gt;%\nWhat is nice about using the pipe operator is that you can read a piece of code from left to right focussing on the verbs (as Hadley Wickham will call it sometimes).\nA short example.\nImagine you have a vector of numbers for which you want to calculate a mean: c(1,2,3,4,5).\nThere are different ways to do this in R.\nA first one is doing it in separate lines of code:\n\nx &lt;- c(1,2,3,4,5)\nmean(x)\n\n[1] 3\n\n\nFor this easy example this would work fine. But a typical side-effect of working this way is that we create a lot of objects along the way. Here we created the object x that stored the values of the vector.\nTo avoid this we could combine all the code in one line by embedding functions:\n\nmean(c(1,2,3,4,5))\n\n[1] 3\n\n\nOne line of code and no storage of a new object. But this can get complicated if you want to combine a set of functions resulting in almost non-readable code!\nThen there is the pipe operator:\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\nc(1,2,3,4,5) %&gt;%\n  mean()\n\n[1] 3\n\n\nThis is how to read this code:\n\nc(1,2,3,4,5) %&gt;% # create the vector and then\n  mean()         # calculate the mean\n\n[1] 3\n\n\nSo the pipe can be read as take (or create) A and then do B with the result. We could create a whole pipeline of functions to be applied in this way making use of the pipe operator (this becomes more clear in the next section when we shortly describe the dplyr verbs).\nA tweet that I encountered gives a great analogy. Using the pipe you could write:\n\nI %&gt;% woke up %&gt;% took a shower %&gt;% got breakfast %&gt;% took the metro %&gt;% arrived at work %&gt;% …\n\nIn a recent update of R they also introduced this idea of a pipe as a “native pipe”. This is written as |&gt; and functions in a similar way as %&gt;% with the advantage that it will also work outside the tidyverse. I’m slowly transforming all my material and code to make use of this native pipe. But as I am notoriously sloppy, the chances are high that you will encounter some old-fashioned tidyverse pipes in my code during the workshop…\n\nI |&gt; learned about the native pipe |&gt; transformed my code |&gt; potentially failed somewhere …",
     "crumbs": [
@@ -899,7 +899,7 @@
   {
     "objectID": "Prerequisites/Prerequisites.html#dplyr-verbs",
     "href": "Prerequisites/Prerequisites.html#dplyr-verbs",
-    "title": "Prerequisites for the workshop Applied Bayesian Analyses in R",
+    "title": "Prerequisites for the workshop Bayesian Analyses in R",
     "section": "dplyr verbs",
     "text": "dplyr verbs\nWithin the tidyverse universe we can make use of a great package called dplyr for a broad spectrum of data-management functions. The functions provided in that package are also sometimes called verbs:\n\nmutate( ) to do recoding etc;\nselect( ) to select a subset of columns/variables;\nfilter( ) to filter cases;\ngroup_by( ) to apply what’s coming afterwards for specific groups in the data by a grouping variable;\narrange( ) to sort the data;\nsummarize( ) to apply summarizing functions (like taking the mean etc.);\nrename( ) to rename columns;\n\nThese functions can be combined in a single statement making use of the pipe operator.\nHere are some examples on the use of these verbs applied to the built-in dataset starwars that is part of the tidyverse package.\nCalculate the mean birth_year for all the characters:\n\nstarwars |&gt; \n  summarize(\n    mean_birth_year = mean(birth_year, na.rm = TRUE)\n    ) |&gt;\n  print()\n\n# A tibble: 1 × 1\n  mean_birth_year\n            &lt;dbl&gt;\n1            87.6\n\n\nCalculate the average height and the average mass by gender:\n\nstarwars |&gt;\n  group_by(gender) |&gt;\n  summarize(\n    mean_height = mean(height, na.rm = T),\n    mean_mass = mean(mass, na.rm = T)\n  ) \n\n# A tibble: 3 × 3\n  gender    mean_height mean_mass\n  &lt;chr&gt;           &lt;dbl&gt;     &lt;dbl&gt;\n1 feminine         167.      54.7\n2 masculine        177.     107. \n3 &lt;NA&gt;             175       81  \n\n\nNow, let’s use the verbs to create a graph. We want to create a scatterplot with mass on the x-axis and height on the y-axis. Also, we want to add a third variable in the mix: whether the character’s birth year is hither than 50 or not (just for fun). Finally, we only want to show characters that have a mass lower than 200 and with a birth_year that is known.\n\nstarwars |&gt;\n  # First filter the cases with a mass higher than 200 and for which birth_year is not NA\n  filter(\n    mass &lt; 200,\n    !is.na(birth_year)\n  ) |&gt;\n\n  # Then we create a variable that has value yes if the character's birth year is above 50 and no otherwise\n  mutate(\n    birth_above_50 = if_else(birth_year &gt; 50, \"yes\", \"no\") \n  ) |&gt;\n  \n  # Select the necessary variables for the graph (not really necessary but this is to show this option)\n  select(\n    height, \n    mass, \n    birth_above_50) |&gt;\n\n  # Create the graph\n  ggplot(\n    aes(x = mass, y = height, color = birth_above_50)\n  ) + geom_point()",
     "crumbs": [
@@ -1499,5 +1499,15 @@
     "title": "Applied Bayesian Analyses in R",
     "section": "Model comparison with loo cross-validation",
     "text": "Model comparison with loo cross-validation\n\nWarning: Found 1 observations with a pareto_k &gt; 0.7 in model\n'MarathonTimes_Mod2'. We recommend to set 'moment_match = TRUE' in order to\nperform moment matching for problematic observations.\n\nComparison&lt;- \n  loo_compare(\n    loo_Mod1, \n    loo_Mod2\n    )\n\nprint(Comparison, simplify = F)\n\n                   elpd_diff se_diff elpd_loo se_elpd_loo p_loo  se_p_loo\nMarathonTimes_Mod2    0.0       0.0  -356.3     12.0         7.2    4.4  \nMarathonTimes_Mod1  -39.9      12.6  -396.2      5.3         1.7    0.3  \n                   looic  se_looic\nMarathonTimes_Mod2  712.6   24.0  \nMarathonTimes_Mod1  792.3   10.6"
+  },
+  {
+    "objectID": "index.html#welcome",
+    "href": "index.html#welcome",
+    "title": "Introduction to Bayesian Analyses with R (Zurich 2026)",
+    "section": "",
+    "text": "In a broad range of scientific disciplines, Bayesian statistics are gaining popularity. Yet the basic training of most researchers only introduces the frequentist framework for statistical inference. This workshop aims to introduce Bayesian statistics in a practical way, laying a foundation for crucial concepts in the Bayesian realm.\nParticipants will be introduced to a workflow for Bayesian analyses in the open-source environment R. The starting point will be the linear model (aka regression model) and we can extend this to linear mixed models.\nThe central piece of software will be the brms package in R, that bridges the typical R modelling language with Stan, which is a probabilistic programming language built to estimate models within the Bayesian framework.\nGiven that a workflow in R will be introduced, it is advised that participants have some experience working with R. Moreover, packages will be used from the tidyverse (e.g., dplyr, ggplot2, …). Therefore, we advise participants to acknowledge themselves with these packages. For more info on how to prepare for the workshop, go to the Prerequisites.",
+    "crumbs": [
+      "Welcome"
+    ]
   }
 ]

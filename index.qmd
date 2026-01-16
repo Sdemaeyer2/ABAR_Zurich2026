@@ -3,11 +3,15 @@ title: "Introduction to Bayesian Analyses with R (Zurich 2026)"
 ---
 
 
-## Introduction
+## Welcome
 
 In a broad range of scientific disciplines, Bayesian statistics are gaining popularity. Yet the basic training of most researchers only introduces the frequentist framework for statistical inference. This workshop aims to introduce Bayesian statistics in a practical way, laying a foundation for crucial concepts in the Bayesian realm.
  
-Participants will be introduced to a workflow for Bayesian analyses in the open-source environment `R`. The starting point will be the linear model (aka regression model) and we can extend this to linear mixed models. The central piece of software will be the `brms` package in `R`, that bridges the typical R modelling language with `Stan`, which is a probabilistic programming language built to estimate models within the Bayesian framework. Given that a workflow in `R` will be introduced, it is advised that participants have some experience working with `R`. Moreover, packages will be used from the tidyverse (e.g., `dplyr`, `ggplot2`, …). Therefore, we advise participants to acknowledge themselves with these packages. 
+Participants will be introduced to a workflow for Bayesian analyses in the open-source environment `R`. The starting point will be the linear model (aka regression model) and we can extend this to linear mixed models. 
+
+The central piece of software will be the `brms` package in `R`, that bridges the typical `R` modelling language with `Stan`, which is a probabilistic programming language built to estimate models within the Bayesian framework. 
+
+Given that a workflow in `R` will be introduced, it is advised that participants have some experience working with `R`. Moreover, packages will be used from the tidyverse (e.g., `dplyr`, `ggplot2`, …). Therefore, we advise participants to acknowledge themselves with these packages. For more info on how to prepare for the workshop, go to the [Prerequisites](/Prerequisites/Prerequisites.qmd). 
 
 
 ## Schedule

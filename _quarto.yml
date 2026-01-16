@@ -43,7 +43,7 @@ website:
     style: "docked"
     contents:
       - href: index.qmd
-        text: Home
+        text: Welcome
       - href: Prerequisites/Prerequisites.qmd
         text: Prerequisites
       - href: Part1.qmd
