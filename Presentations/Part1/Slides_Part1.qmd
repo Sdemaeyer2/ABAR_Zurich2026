@@ -4,7 +4,7 @@ subtitle: "Part1"
 author: "Sven De Maeyer"
 format:
   revealjs: 
-    theme: [simple, My_theme.scss]
+    theme: [default, zurich2026-slides-clean.scss]
     width: 1422
     height: 805
     slide-number: true
@@ -81,9 +81,9 @@ You can find:
 ## Why statistical inference?
 
 ::: center-xy
-We want to learn more about [a population]{style="color: #447099"} but we have [sample data]{style="color: #447099"}!
+We want to learn more about [a population]{style="color: #d28e43"} but we have [sample data]{style="color: #d28e43"}!
 
-Therefore, we have [uncertainty]{style="color: red"}
+Therefore, we have [uncertainty]{style="color: #d28e43"}
 :::
 
 ## Why statistical inference? an example
@@ -210,9 +210,9 @@ $$
 P(\theta|data) = \frac{P(data|\theta)P(\theta)}{P(data)}
 $$ with
 
--   $P(data|\theta)$ : the [likelihood]{style="color: #447099"} of the data given our model $\theta$
--   $P(\theta)$ : our [prior]{style="color: #447099"} belief about values for the model parameters
--   $P(\theta|data)$: the [posterior]{style="color: #447099"} probability for model parameter values
+-   $P(data|\theta)$ : the [likelihood]{style="color: #d28e43"} of the data given our model $\theta$
+-   $P(\theta)$ : our [prior]{style="color: #d28e43"} belief about values for the model parameters
+-   $P(\theta|data)$: the [posterior]{style="color: #d28e43"} probability for model parameter values
 :::
 :::::
 
@@ -222,7 +222,7 @@ meme from <https://twitter.com/ChelseaParlett/status/1421291716229746689?s=20>
 
 ## Likelihood
 
-$P(data|\theta)$ : the [likelihood]{style="color: #447099"} of the data given our model $\theta$
+$P(data|\theta)$ : the [likelihood]{style="color: #d28e43"} of the data given our model $\theta$
 
 This part is about our [MODEL]{style="background-color: yellow; color: red"} and the parameters (aka the unknowns) in that model
 
@@ -265,13 +265,13 @@ data_frame(X, Prob) %>%
 
 ::::: columns
 ::: {.column width="50%"}
-[Uninformative/Weakly informative]{style="color: #447099"}
+[Uninformative/Weakly informative]{style="color: #d28e43"}
 
 When objectivity is crucial and you want *let the data speak for itself...*
 :::
 
 ::: {.column width="50%"}
-[Informative]{style="color: #447099"}
+[Informative]{style="color: #d28e43"}
 
 When including significant information is crucial
 
@@ -321,13 +321,13 @@ Two potential priors for the *mean marathon time* in the population
 
 ## Let's apply this idea
 
-Our [**Model**]{style="color: #447099"} for marathon times
+Our [**Model**]{style="color: #d28e43"} for marathon times
 
 $y_i \backsim N(\mu, \sigma)$
 
 ## Let's apply this idea
 
-Our [**Priors**]{style="color: #447099"} related to mu and sigma:
+Our [**Priors**]{style="color: #d28e43"} related to mu and sigma:
 
 ```{r, echo = TRUE}
 par(mfrow=c(2,2))
@@ -337,7 +337,7 @@ curve( dunif( x , 1 , 40 ) , from=-5 , to=50 ,xlab="sigma", main="Prior for sigm
 
 ## Let's apply this idea
 
-Our [**data**]{style="color: #447099"}:
+Our [**data**]{style="color: #d28e43"}:
 
 ```{r}
 MT <- c(
@@ -356,7 +356,7 @@ MT
 
 ## Let's apply this idea
 
-What is the [**posterior probability**]{style="color: #447099"} of [mu = 180]{style="background-color: yellow; color: red"} combined with a [sigma = 15]{style="background-color: yellow; color: red"}?
+What is the [**posterior probability**]{style="color: #d28e43"} of [mu = 180]{style="background-color: yellow; color: red"} combined with a [sigma = 15]{style="background-color: yellow; color: red"}?
 
 ```{r}
 #| echo: false
@@ -413,7 +413,7 @@ Product
 
 ## Let's apply this idea
 
-What is the [**posterior probability**]{style="color: #447099"} of [mu = 210]{style="background-color: yellow; color: red"} combined with a [sigma = 30]{style="background-color: yellow; color: red"}?
+What is the [**posterior probability**]{style="color: #d28e43"} of [mu = 210]{style="background-color: yellow; color: red"} combined with a [sigma = 30]{style="background-color: yellow; color: red"}?
 
 ::::: columns
 ::: {.column width="50%"}
@@ -570,7 +570,7 @@ Posterior gets unsolvable by grid approximation
 
 <br>
 
-We will approximate the 'joint posterior' by ['smart' sampling]{style="color: #447099"}
+We will approximate the 'joint posterior' by ['smart' sampling]{style="color: #d28e43"}
 
 <br>
 
@@ -596,9 +596,9 @@ BUT: samples will not be random!
 
 -   different dedicated software/packages are available: JAGS / BUGS / Stan
 
--   most powerful is [Stan]{style="color: #447099"}! Specifically the *Hamiltonian Monte Carlo* algorithm makes it the best choice at the moment
+-   most powerful is [Stan]{style="color: #d28e43"}! Specifically the *Hamiltonian Monte Carlo* algorithm makes it the best choice at the moment
 
--   [Stan]{style="color: #447099"} is a probabilistic programming language that uses C++
+-   [Stan]{style="color: #d28e43"} is a probabilistic programming language that uses C++
 
 ## Example of Stan code
 
@@ -710,11 +710,11 @@ summary(Mod_MT1)
 
 ## About chains and iterations
 
-Markov [Chain]{style="color: red"} Monte Carlo
+Markov [Chain]{style="color: #d28e43"} Monte Carlo
 
 -   A chain of samples of parameter values
--   It is advised to run [multiple chains]{style="color: #447099"}
--   Each sample of parameter values is called an [iteration]{style="color: #447099"}
+-   It is advised to run [multiple chains]{style="color: #d28e43"}
+-   Each sample of parameter values is called an [iteration]{style="color: #d28e43"}
 -   First X iterations are used to tune the sampler but not used to interpret the results: X burn-in iterations
 
 `brms` defaults with **4 chains** each of **2000 iterations** of which **1000 iterations** are used as burn-in
@@ -745,7 +745,7 @@ Mod_MT1 <- brm(
 plot(Mod_MT1)
 ```
 
-## `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099" transition="slide-in"}
+## `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#82654f" transition="slide-in"}
 
 -   Open `MarathonData.RData`
 -   Estimate your first Bayesian Models
@@ -914,7 +914,7 @@ knitr::include_graphics("Vethari_paper.jpg")
 
 -   posterior-predictive check
 
--   compare models with <i>[leave one out cross-validation]{style="color:#447099"}</i>
+-   compare models with <i>[leave one out cross-validation]{style="color:#d28e43"}</i>
 
 ## Posterior-predictive check
 
@@ -966,7 +966,7 @@ Comparison<-
 print(Comparison, simplify = F)
 ```
 
-## `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099" transition="slide-in"}
+## `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#82654f" transition="slide-in"}
 
 -   Time to switch to `your dataset`
 -   Think of `two alternative models` for a certain variable
@@ -1087,7 +1087,7 @@ ModX <- brm(
 )
 ```
 
-# `r fontawesome::fa("laptop-code", "white")` Homework {background-color="#447099" transition="slide-in"}
+# `r fontawesome::fa("laptop-code", "white")` Homework {background-color="#82654f" transition="slide-in"}
 
 Time to think about `your data` and research question
 

@@ -90,7 +90,7 @@
     "href": "Presentations/Part3/Slides_Part3.html#divergent-transitions",
     "title": "Applied Bayesian Analyses in R",
     "section": "Divergent transitions…",
-    "text": "Divergent transitions…\n\n\n\nExploring the parameter space…"
+    "text": "Divergent transitions…\n\nExploring the parameter space…"
   },
   {
     "objectID": "Presentations/Part3/Slides_Part3.html#divergent-transitions-1",
@@ -132,7 +132,7 @@
     "href": "Presentations/Part3/Slides_Part3.html#the-mcmc_areas-function",
     "title": "Applied Bayesian Analyses in R",
     "section": "The mcmc_areas() function",
-    "text": "The mcmc_areas() function\nGives a posterior distribution including a certain credible interval that you can set manually with the prob argument:\n\nmcmc_areas(\n  M3,\n  pars = c(\n    \"b_FirstVersion_GM\",\n    \"b_Experimental_condition\"\n  ),\n  prob = .89\n)\n\nLoading required package: rstan\n\n\nLoading required package: StanHeaders\n\n\nError: package or namespace load failed for 'rstan' in .doLoadActions(where, attach):\n error in load action .__A__.1 for package rstan: Rcpp::loadModule(module = \"class_model_base\", what = TRUE, env = ns, : Unable to load module \"class_model_base\": attempt to apply non-function"
+    "text": "The mcmc_areas() function\nGives a posterior distribution including a certain credible interval that you can set manually with the prob argument:\n\nmcmc_areas(\n  M3,\n  pars = c(\n    \"b_FirstVersion_GM\",\n    \"b_Experimental_condition\"\n  ),\n  prob = .89\n)"
   },
   {
     "objectID": "Presentations/Part3/Slides_Part3.html#the-mcmc_areas_ridges-function",
@@ -153,7 +153,7 @@
     "href": "Presentations/Part3/Slides_Part3.html#manually-create-visualizations",
     "title": "Applied Bayesian Analyses in R",
     "section": "Manually create visualizations",
-    "text": "Manually create visualizations\n\nPowercombo: as_draws_df() + ggplot2 + ggdist\n\nWhat does as_draws_df() do?\n\n\nposterior_PD &lt;- as_draws_df(M3)\nhead(posterior_PD)\n\n# A draws_df: 6 iterations, 1 chains, and 49 variables\n  b_Intercept b_FirstVersion_GM b_Experimental_condition sd_Class__Intercept\n1         113              0.98                      4.7                 5.2\n2         112              1.47                      5.1                 2.8\n3         113              1.07                      3.5                 2.8\n4         111              1.09                      4.7                 4.2\n5         112              1.08                      4.0                 1.7\n6         111              1.04                      5.0                 2.4\n  sd_Class__FirstVersion_GM cor_Class__Intercept__FirstVersion_GM sigma\n1                      0.93                                  0.77   7.4\n2                      1.06                                  0.68   8.1\n3                      0.88                                  0.79   7.1\n4                      0.75                                  0.74   8.0\n5                      0.94                                  0.78   7.1\n6                      0.97                                  0.82   8.1\n  r_Class[1,Intercept]\n1                 1.84\n2                -1.59\n3                -0.60\n4                 0.95\n5                 0.81\n6                 0.38\n# ... with 41 more variables\n# ... hidden reserved variables {'.chain', '.iteration', '.draw'}"
+    "text": "Manually create visualizations\n\nPowercombo: as_draws_df() + ggplot2 + ggdist\n\nWhat does as_draws_df() do?\n\n\nposterior_PD &lt;- as_draws_df(M3)\nhead(posterior_PD)"
   },
   {
     "objectID": "Presentations/Part3/Slides_Part3.html#use-draws-to-create-a-plot-using-ggdist-geoms",
@@ -209,7 +209,7 @@
     "href": "Presentations/Part3/Slides_Part3.html#hypothetical-outcome-plots-hops",
     "title": "Applied Bayesian Analyses in R",
     "section": "Hypothetical Outcome Plots (HOPs)",
-    "text": "Hypothetical Outcome Plots (HOPs)\nCode: see separate script called HOP_script.R\n\n\nWarning: Dropping 'draws_df' class as required metadata was removed.\n\n\n# A tibble: 6 × 3\n   draw     X Pred1\n  &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;\n1     1 -15    95.8\n2     1 -14.9  95.9\n3     1 -14.8  96.0\n4     1 -14.7  96.1\n5     1 -14.6  96.2\n6     1 -14.5  96.3"
+    "text": "Hypothetical Outcome Plots (HOPs)\nCode: see separate script called HOP_script.R\n\n\n# A tibble: 6 × 3\n   draw     X Pred1\n  &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;\n1     1 -15    95.8\n2     1 -14.9  95.9\n3     1 -14.8  96.0\n4     1 -14.7  96.1\n5     1 -14.6  96.2\n6     1 -14.5  96.3"
   },
   {
     "objectID": "Presentations/Part3/Slides_Part3.html#plotting-the-residuals",
@@ -244,14 +244,14 @@
     "href": "Presentations/Part3/Slides_Part3.html#hop-per-higher-level-unit",
     "title": "Applied Bayesian Analyses in R",
     "section": "HOP per higher level unit",
-    "text": "HOP per higher level unit\nCode: see separate script called HOP_MixedEffects_script.R\n\n\nThis is posterior version 1.6.1\n\n\n\nAttaching package: 'posterior'\n\n\nThe following object is masked from 'package:bayesplot':\n\n    rhat\n\n\nThe following objects are masked from 'package:stats':\n\n    mad, sd, var\n\n\nThe following objects are masked from 'package:base':\n\n    %in%, match\n\n\nWarning: Dropping 'draws_df' class as required metadata was removed."
+    "text": "HOP per higher level unit\nCode: see separate script called HOP_MixedEffects_script.R"
   },
   {
     "objectID": "Presentations/Part3/Slides_Part3.html#credible-intervals",
     "href": "Presentations/Part3/Slides_Part3.html#credible-intervals",
     "title": "Applied Bayesian Analyses in R",
     "section": "Credible Intervals",
-    "text": "Credible Intervals\n\n\n\n\n\nAttaching package: 'bayestestR'\n\n\nThe following object is masked from 'package:ggdist':\n\n    hdi\n\n\nThe following object is masked from 'package:ggmcmc':\n\n    ci\n\n\nWarning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.\nℹ Please use `linewidth` instead.\n\n\n\n\n\n\n\n\n\n\n\n\nETI: Equal Tailed Interval\n\n\n\nHDI: Highest Density Interval"
+    "text": "Credible Intervals\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nETI: Equal Tailed Interval\n\n\n\nHDI: Highest Density Interval"
   },
   {
     "objectID": "Presentations/Part3/Slides_Part3.html#concept-of-rope",
@@ -279,14 +279,14 @@
     "href": "Presentations/Part3/Slides_Part3.html#visualizing-the-hdi-rope-rule",
     "title": "Applied Bayesian Analyses in R",
     "section": "Visualizing the HDI + ROPE rule",
-    "text": "Visualizing the HDI + ROPE rule\n\nWe visualize the equivalence_test() by adding plot( )\n\n\nequivalence_test(M3) %&gt;%\n  plot()\n\nPicking joint bandwidth of 0.121"
+    "text": "Visualizing the HDI + ROPE rule\n\nWe visualize the equivalence_test() by adding plot( )\n\n\n\nequivalence_test(M3) %&gt;%\n  plot()"
   },
   {
     "objectID": "Presentations/Part3/Slides_Part3.html#probability-of-direction-pd-with-parameters-package",
     "href": "Presentations/Part3/Slides_Part3.html#probability-of-direction-pd-with-parameters-package",
     "title": "Applied Bayesian Analyses in R",
     "section": "Probability of Direction (PD) with parameters package",
-    "text": "Probability of Direction (PD) with parameters package\n\nlibrary(parameters)\n\nRegistered S3 methods overwritten by 'parameters':\n  method                           from      \n  display.parameters_distribution  datawizard\n  plot.parameters_distribution     datawizard\n  print_md.parameters_distribution datawizard\n\n\n\nAttaching package: 'parameters'\n\n\nThe following object is masked from 'package:ggmcmc':\n\n    ci\n\nmodel_parameters(\n  M3,\n  ci_method = \"hdi\",\n  rope_range = c(-1.8,1.8), #sd MarathonTimeM = 17.76 so 17.76*0.1 \n  test = c(\"rope\", \"pd\")\n  )\n\n# Fixed Effects\n\nParameter              | Median |           95% CI |     pd | % in ROPE |  Rhat |     ESS\n-----------------------------------------------------------------------------------------\n(Intercept)            | 111.36 | [109.34, 113.58] |   100% |        0% | 1.000 | 1925.00\nFirstVersion_GM        |   0.94 | [  0.49,   1.40] | 99.98% |      100% | 1.001 | 1718.00\nExperimental_condition |   4.54 | [  1.77,   7.52] | 99.75% |     0.21% | 0.999 | 1814.00\n\n# Sigma\n\nParameter | Median |       95% CI |   pd | % in ROPE |  Rhat |     ESS\n----------------------------------------------------------------------\nsigma     |   7.68 | [7.19, 8.20] | 100% |        0% | 1.001 | 5235.00\n\n\n\nUncertainty intervals (highest-density) and p-values (two-tailed)\n  computed using a MCMC distribution approximation."
+    "text": "Probability of Direction (PD) with parameters package\n\nlibrary(parameters)\nmodel_parameters(\n  M3,\n  ci_method = \"hdi\",\n  rope_range = c(-1.8,1.8), #sd MarathonTimeM = 17.76 so 17.76*0.1 \n  test = c(\"rope\", \"pd\")\n  )\n\n# Fixed Effects\n\nParameter              | Median |           95% CI |     pd | % in ROPE |  Rhat |     ESS\n-----------------------------------------------------------------------------------------\n(Intercept)            | 111.36 | [109.34, 113.58] |   100% |        0% | 1.000 | 1925.00\nFirstVersion_GM        |   0.94 | [  0.49,   1.40] | 99.98% |      100% | 1.001 | 1718.00\nExperimental_condition |   4.54 | [  1.77,   7.52] | 99.75% |     0.21% | 0.999 | 1814.00\n\n# Sigma\n\nParameter | Median |       95% CI |   pd | % in ROPE |  Rhat |     ESS\n----------------------------------------------------------------------\nsigma     |   7.68 | [7.19, 8.20] | 100% |        0% | 1.001 | 5235.00"
   },
   {
     "objectID": "Presentations/Part3/Slides_Part3.html#some-books",
@@ -384,7 +384,7 @@
     "href": "Presentations/Part1/Slides_Part1.html#frequentistic-statistical-inference-with-data",
     "title": "Applied Bayesian Analyses in R",
     "section": "Frequentistic statistical inference (with data…)",
-    "text": "Frequentistic statistical inference (with data…)\nMaximal Likelihood estimation:\n\n\n\nhere() starts at /Users/svendemaeyer/Library/CloudStorage/OneDrive-UniversiteitAntwerpen/Praatjes/Workshops/Zurich_2026/ABAR_Zurich26_Web\n\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\nLoading required package: Rcpp\n\nLoading 'brms' package (version 2.22.0). Useful instructions\ncan be found by typing help('brms'). A more detailed introduction\nto the package is available through vignette('brms_overview').\n\n\nAttaching package: 'brms'\n\n\nThe following object is masked from 'package:stats':\n\n    ar\n\n\nThis is bayesplot version 1.12.0\n\n- Online documentation and vignettes at mc-stan.org/bayesplot\n\n- bayesplot theme set to bayesplot::theme_default()\n\n   * Does _not_ affect other ggplot2 plots\n\n   * See ?bayesplot_theme_set for details on theme setting\n\n\nAttaching package: 'bayesplot'\n\n\nThe following object is masked from 'package:brms':\n\n    rhat\n\n\nRows: 87 Columns: 10\n── Column specification ────────────────────────────────────────────────────────\nDelimiter: \",\"\nchr (6): Marathon, Name, Category, CrossTraining, Wall21, CATEGORY\ndbl (4): id, km4week, sp4week, MarathonTime\n\nℹ Use `spec()` to retrieve the full column specification for this data.\nℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.\n\n\n\nCall:\nlm(formula = MarathonTimeM ~ km4week, data = MarathonData)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-42.601 -12.469  -0.536  12.816  38.670 \n\nCoefficients:\n             Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept) 199.14483    1.93856 102.728  &lt; 2e-16 ***\nkm4week      -0.50907    0.07233  -7.038 4.68e-10 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 18.08 on 85 degrees of freedom\nMultiple R-squared:  0.3682,    Adjusted R-squared:  0.3608 \nF-statistic: 49.53 on 1 and 85 DF,  p-value: 4.675e-10\n\n\n\n\n\nData comes from https://www.kaggle.com/datasets/girardi69/marathon-time-predictions?resource=download"
+    "text": "Frequentistic statistical inference (with data…)\nMaximal Likelihood estimation:\n\n\n\n\nCall:\nlm(formula = MarathonTimeM ~ km4week, data = MarathonData)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-42.601 -12.469  -0.536  12.816  38.670 \n\nCoefficients:\n             Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept) 199.14483    1.93856 102.728  &lt; 2e-16 ***\nkm4week      -0.50907    0.07233  -7.038 4.68e-10 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 18.08 on 85 degrees of freedom\nMultiple R-squared:  0.3682,    Adjusted R-squared:  0.3608 \nF-statistic: 49.53 on 1 and 85 DF,  p-value: 4.675e-10\n\n\n\n\n\nData comes from https://www.kaggle.com/datasets/girardi69/marathon-time-predictions?resource=download"
   },
   {
     "objectID": "Presentations/Part1/Slides_Part1.html#frequentistic-statistical-inference-interpretation",
@@ -398,7 +398,7 @@
     "href": "Presentations/Part1/Slides_Part1.html#bayesian-statistical-inference",
     "title": "Applied Bayesian Analyses in R",
     "section": "Bayesian statistical inference",
-    "text": "Bayesian statistical inference\n\n\nLoading required package: rstan\n\n\nLoading required package: StanHeaders\n\n\nError: package or namespace load failed for 'rstan' in .doLoadActions(where, attach):\n error in load action .__A__.1 for package rstan: Rcpp::loadModule(module = \"class_model_base\", what = TRUE, env = ns, : Unable to load module \"class_model_base\": attempt to apply non-function"
+    "text": "Bayesian statistical inference"
   },
   {
     "objectID": "Presentations/Part1/Slides_Part1.html#frequentist-compared-to-bayesian-inference",
@@ -440,7 +440,7 @@
     "href": "Presentations/Part1/Slides_Part1.html#prior-as-a-distribution",
     "title": "Applied Bayesian Analyses in R",
     "section": "Prior as a distribution",
-    "text": "Prior as a distribution\nHow probable are different values as average marathon time in a population?\n\n\nWarning: `data_frame()` was deprecated in tibble 1.1.0.\nℹ Please use `tibble()` instead."
+    "text": "Prior as a distribution\nHow probable are different values as average marathon time in a population?"
   },
   {
     "objectID": "Presentations/Part1/Slides_Part1.html#types-of-priors",
@@ -699,7 +699,7 @@
     "href": "Presentations/Part1/Slides_Part1.html#model-comparison-with-loo-cross-validation",
     "title": "Applied Bayesian Analyses in R",
     "section": "Model comparison with loo cross-validation",
-    "text": "Model comparison with loo cross-validation\n\\(\\sim\\) AIC or BIC in Frequentist statistics\n\\(\\widehat{elpd}\\): “expected log predictive density” (higher \\(\\widehat{elpd}\\) implies better model fit without being sensitive for overfitting!)\n\nloo_Mod1 &lt;- loo(MarathonTimes_Mod1)\nloo_Mod2 &lt;- loo(MarathonTimes_Mod2)"
+    "text": "Model comparison with loo cross-validation\n\\(\\sim\\) AIC or BIC in Frequentist statistics\n\\(\\widehat{elpd}\\): “expected log predictive density” (higher \\(\\widehat{elpd}\\) implies better model fit without being sensitive for overfitting!)\n\nloo_Mod1 &lt;- loo(MarathonTimes_Mod1)\nloo_Mod2 &lt;- loo(MarathonTimes_Mod2)\n\nComparison&lt;- \n  loo_compare(\n    loo_Mod1, \n    loo_Mod2\n    )\n\nprint(Comparison, simplify = F)"
   },
   {
     "objectID": "Presentations/Part1/Slides_Part1.html#your-turn-1",
@@ -1052,21 +1052,21 @@
     "href": "Presentations/Part2/Slides_Part2.html#posterior-predictive-check",
     "title": "Applied Bayesian Analyses in R",
     "section": "Posterior-predictive check",
-    "text": "Posterior-predictive check\nA visual check that can be performed with pp_check() from brms\n\npp_check(Mod_MT2) + theme_minimal()\n\nUsing 10 posterior draws for ppc type 'dens_overlay' by default."
+    "text": "Posterior-predictive check\nA visual check that can be performed with pp_check() from brms\n\npp_check(Mod_MT2) + theme_minimal()"
   },
   {
     "objectID": "Presentations/Part2/Slides_Part2.html#model-comparison-with-loo-cross-validation",
     "href": "Presentations/Part2/Slides_Part2.html#model-comparison-with-loo-cross-validation",
     "title": "Applied Bayesian Analyses in R",
     "section": "Model comparison with loo cross-validation",
-    "text": "Model comparison with loo cross-validation\n\\(\\sim\\) AIC or BIC in Frequentist statistics\n\\(\\widehat{elpd}\\): “expected log predictive density” (higher \\(\\widehat{elpd}\\) implies better model fit without being sensitive for overfitting!)\n\nloo_Mod1 &lt;- loo(MarathonTimes_Mod1)\nloo_Mod2 &lt;- loo(MarathonTimes_Mod2)\n\nWarning: Found 1 observations with a pareto_k &gt; 0.7 in model\n'MarathonTimes_Mod2'. We recommend to set 'moment_match = TRUE' in order to\nperform moment matching for problematic observations.\n\nComparison&lt;- \n  loo_compare(\n    loo_Mod1, \n    loo_Mod2\n    )\n\nprint(Comparison, simplify = F)\n\n                   elpd_diff se_diff elpd_loo se_elpd_loo p_loo  se_p_loo\nMarathonTimes_Mod2    0.0       0.0  -356.3     12.0         7.2    4.4  \nMarathonTimes_Mod1  -39.9      12.6  -396.2      5.3         1.7    0.3  \n                   looic  se_looic\nMarathonTimes_Mod2  712.6   24.0  \nMarathonTimes_Mod1  792.3   10.6"
+    "text": "Model comparison with loo cross-validation\n\\(\\sim\\) AIC or BIC in Frequentist statistics\n\\(\\widehat{elpd}\\): “expected log predictive density” (higher \\(\\widehat{elpd}\\) implies better model fit without being sensitive for overfitting!)\n\nloo_Mod1 &lt;- loo(MarathonTimes_Mod1)\nloo_Mod2 &lt;- loo(MarathonTimes_Mod2)\n\nComparison&lt;- \n  loo_compare(\n    loo_Mod1, \n    loo_Mod2\n    )\n\nprint(Comparison, simplify = F)"
   },
   {
     "objectID": "Presentations/Part2/Slides_Part2.html#when-to-worry-and-how-to-avoid-misuse-of-bayesian-statistics",
     "href": "Presentations/Part2/Slides_Part2.html#when-to-worry-and-how-to-avoid-misuse-of-bayesian-statistics",
     "title": "Applied Bayesian Analyses in R",
     "section": "When to Worry and How to Avoid Misuse of Bayesian Statistics",
-    "text": "When to Worry and How to Avoid Misuse of Bayesian Statistics\nby Laurent Smeets and Rens van der Schoot\n\n\nBefore estimating the model:\n\nDo you understand the priors?\n\n\nAfter estimation before inspecting results:\n\nDoes the trace-plot exhibit convergence?\nDoes convergence remain after doubling the number of iterations?\nDoes the posterior distribution histogram have enough information?\nDo the chains exhibit a strong degree of autocorrelation?\nDo the posterior distributions make substantive sense?\n\n\nUnderstanding the exact influence of the priors\n\nDo different specification of the multivariate variance priors influence the results?\nIs there a notable effect of the prior when compared with non-informative priors?\nAre the results stable from a sensitivity analysis?\nIs the Bayesian way of interpreting and reporting model results used?\n\n\n\n\n\nTutorial source: https://www.rensvandeschoot.com/brms-wambs/ Alternatives exist as well like the BARG framework (Kruschke, J.K. Bayesian Analysis Reporting Guidelines. Nat Hum Behav 5, 1282–1291 (2021). https://doi.org/10.1038/s41562-021-01177-7)"
+    "text": "When to Worry and How to Avoid Misuse of Bayesian Statistics\nby Laurent Smeets and Rens van der Schoot\n\n\nBefore estimating the model:\n\nDo you understand the priors?\n\n\nAfter estimation before inspecting results:\n\nDoes the trace-plot exhibit convergence?\nDoes convergence remain after doubling the number of iterations?\nDoes the posterior distribution histogram have enough information?\nDo the chains exhibit a strong degree of autocorrelation?\nDo the posterior distributions make substantive sense?\n\n\nUnderstanding the exact influence of the priors\n\nDo different specification of the multivariate variance priors influence the results?\nIs there a notable effect of the prior when compared with non-informative priors?\nAre the results stable from a sensitivity analysis?\nIs the Bayesian way of interpreting and reporting model results used?\n\n\n\n\nTutorial source: https://www.rensvandeschoot.com/brms-wambs/ Alternatives exist as well like the BARG framework (Kruschke, J.K. Bayesian Analysis Reporting Guidelines. Nat Hum Behav 5, 1282–1291 (2021). https://doi.org/10.1038/s41562-021-01177-7)"
   },
   {
     "objectID": "Presentations/Part2/Slides_Part2.html#wambs-template-to-use",
@@ -1136,7 +1136,7 @@
     "href": "Presentations/Part2/Slides_Part2.html#visualizing-priors-1",
     "title": "Applied Bayesian Analyses in R",
     "section": "Visualizing priors",
-    "text": "Visualizing priors\n\nlibrary(metRology)\nlibrary(ggplot2)\nlibrary(ggtext)\nlibrary(patchwork)\n\n# Setting a plotting theme\ntheme_set(theme_linedraw() +\n            theme(text = element_text(family = \"Times\", size = 8),\n                  panel.grid = element_blank(),\n                  plot.title = element_markdown())\n)\n\n# Generate the plot for the prior of the Intercept (mu)\nPrior_mu &lt;- ggplot( ) +\n  stat_function(\n    fun = dt.scaled,    # We use the dt.scaled function of metRology\n    args = list(df = 3, mean = 199.2, sd = 24.9), # \n    xlim = c(120,300)\n  ) +\n  scale_y_continuous(name = \"density\") +\n  labs(title = \"Prior for the intercept\",\n       subtitle = \"student_t(3,199.2,24.9)\")\n\n# Generate the plot for the prior of the error variance (sigma)\nPrior_sigma &lt;- ggplot( ) +\n  stat_function(\n    fun = dt.scaled,    # We use the dt.scaled function of metRology\n    args = list(df = 3, mean = 0, sd = 24.9), # \n    xlim = c(0,6)\n  ) +\n  scale_y_continuous(name = \"density\") +\n  labs(title = \"Prior for the residual variance\",\n       subtitle = \"student_t(3,0,24.9)\")\n\n# Generate the plot for the prior of the effects of independent variables\nPrior_betas &lt;- ggplot( ) +\n  stat_function(\n    fun = dnorm,    # We use the normal distribution\n    args = list(mean = 0, sd = 10), # \n    xlim = c(-20,20)\n  ) +\n  scale_y_continuous(name = \"density\") +\n  labs(title = \"Prior for the effects of independent variables\",\n       subtitle = \"N(0,10)\")\n\nPrior_mu + Prior_sigma + Prior_betas +\n  plot_layout(ncol = 3)\n\n\n\n\nProbability density plots for the different priors used in the example model"
+    "text": "Visualizing priors\n\nlibrary(metRology)\nlibrary(ggplot2)\nlibrary(ggtext)\nlibrary(patchwork)\n\n# Setting a plotting theme\ntheme_set(theme_linedraw() +\n            theme(text = element_text(family = \"Times\", size = 8),\n                  panel.grid = element_blank(),\n                  plot.title = element_markdown())\n)\n\n# Generate the plot for the prior of the Intercept (mu)\nPrior_mu &lt;- ggplot( ) +\n  stat_function(\n    fun = dt.scaled,    # We use the dt.scaled function of metRology\n    args = list(df = 3, mean = 199.2, sd = 24.9), # \n    xlim = c(120,300)\n  ) +\n  scale_y_continuous(name = \"density\") +\n  labs(title = \"Prior for the intercept\",\n       subtitle = \"student_t(3,199.2,24.9)\")\n\n# Generate the plot for the prior of the error variance (sigma)\nPrior_sigma &lt;- ggplot( ) +\n  stat_function(\n    fun = dt.scaled,    # We use the dt.scaled function of metRology\n    args = list(df = 3, mean = 0, sd = 24.9), # \n    xlim = c(0,6)\n  ) +\n  scale_y_continuous(name = \"density\") +\n  labs(title = \"Prior for the residual variance\",\n       subtitle = \"student_t(3,0,24.9)\")\n\n# Generate the plot for the prior of the effects of independent variables\nPrior_betas &lt;- ggplot( ) +\n  stat_function(\n    fun = dnorm,    # We use the normal distribution\n    args = list(mean = 0, sd = 10), # \n    xlim = c(-20,20)\n  ) +\n  scale_y_continuous(name = \"density\") +\n  labs(title = \"Prior for the effects of independent variables\",\n       subtitle = \"N(0,10)\")\n\nPrior_mu + Prior_sigma + Prior_betas +\n  plot_layout(ncol = 3)"
   },
   {
     "objectID": "Presentations/Part2/Slides_Part2.html#understanding-priors-another-example",
@@ -1164,7 +1164,7 @@
     "href": "Presentations/Part2/Slides_Part2.html#understanding-priors-another-example-3",
     "title": "Applied Bayesian Analyses in R",
     "section": "Understanding priors… another example",
-    "text": "Understanding priors… another example\n\nAssuming a small effect of experimental conditions\nNo difference between both experimental conditions\n\n\n\n\n\n\n\n\n\n\nRemember Cohen’s d: 0.2 = small effect size; 0.5 = medium effect size; 0.8 or higher = large effect size"
+    "text": "Understanding priors… another example\n\nAssuming a small effect of experimental conditions\nNo difference between both experimental conditions\n\n\nRemember Cohen’s d: 0.2 = small effect size; 0.5 = medium effect size; 0.8 or higher = large effect size"
   },
   {
     "objectID": "Presentations/Part2/Slides_Part2.html#setting-custom-priors-in-brms",
@@ -1199,7 +1199,7 @@
     "href": "Presentations/Part2/Slides_Part2.html#check-some-summary-statistics",
     "title": "Applied Bayesian Analyses in R",
     "section": "Check some summary statistics",
-    "text": "Check some summary statistics\n\nHow are summary statistics of simulated datasets (e.g., median, min, max, …) distributed over the datasets?\nHow does that compare to our real data?\nUse type = \"stat\" argument within pp_check()\n\n\npp_check(Fit_Model_priors, \n         type = \"stat\", \n         stat = \"median\")\n\nUsing all posterior draws for ppc type 'stat' by default.\n\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`."
+    "text": "Check some summary statistics\n\nHow are summary statistics of simulated datasets (e.g., median, min, max, …) distributed over the datasets?\nHow does that compare to our real data?\nUse type = \"stat\" argument within pp_check()\n\n\npp_check(Fit_Model_priors, \n         type = \"stat\", \n         stat = \"median\")"
   },
   {
     "objectID": "Presentations/Part2/Slides_Part2.html#your-turn-1",
@@ -1213,14 +1213,14 @@
     "href": "Presentations/Part2/Slides_Part2.html#does-the-trace-plot-exhibits-convergence",
     "title": "Applied Bayesian Analyses in R",
     "section": "Does the trace-plot exhibits convergence?",
-    "text": "Does the trace-plot exhibits convergence?\n\nCreate custom trace-plots (aka caterpillar plots) with ggs( ) function from ggmcmc package\n\nModel_chains &lt;- ggs(MarathonTimes_Mod2)\n\nModel_chains %&gt;%\n  filter(Parameter %in% c(\n          \"b_Intercept\", \n          \"b_km4week\", \n          \"b_sp4week\", \n          \"sigma\"\n          )\n  ) %&gt;%\n  ggplot(aes(\n    x   = Iteration,\n    y   = value, \n    col = as.factor(Chain)))+\n  geom_line() +\n  facet_grid(Parameter ~ .,\n             scale  = 'free_y',\n             switch = 'y') +\n  labs(title = \"Caterpillar Plots for the parameters\",\n       col   = \"Chains\")\n\n\n\n\nCaterpillar plots for the parameters in the model"
+    "text": "Does the trace-plot exhibits convergence?\n\nCreate custom trace-plots (aka caterpillar plots) with ggs( ) function from ggmcmc package\n\nModel_chains &lt;- ggs(MarathonTimes_Mod2)\n\nModel_chains %&gt;%\n  filter(Parameter %in% c(\n          \"b_Intercept\", \n          \"b_km4week\", \n          \"b_sp4week\", \n          \"sigma\"\n          )\n  ) %&gt;%\n  ggplot(aes(\n    x   = Iteration,\n    y   = value, \n    col = as.factor(Chain)))+\n  geom_line() +\n  facet_grid(Parameter ~ .,\n             scale  = 'free_y',\n             switch = 'y') +\n  labs(title = \"Caterpillar Plots for the parameters\",\n       col   = \"Chains\")"
   },
   {
     "objectID": "Presentations/Part2/Slides_Part2.html#does-convergence-remain-after-doubling-the-number-of-iterations",
     "href": "Presentations/Part2/Slides_Part2.html#does-convergence-remain-after-doubling-the-number-of-iterations",
     "title": "Applied Bayesian Analyses in R",
     "section": "Does convergence remain after doubling the number of iterations?",
-    "text": "Does convergence remain after doubling the number of iterations?\n\nRe-fit the model with more iterations\n\nCheck trace-plots again\n\n\n\n\n\n\n\nWarning\n\n\n\nFirst consider the need to do this! If you have a complex model that already took a long time to run, this check will take at least twice as much time…"
+    "text": "Does convergence remain after doubling the number of iterations?\n\nRe-fit the model with more iterations\n\nCheck trace-plots again\n\n\n\n\n\n\n\nWarning\n\n\nFirst consider the need to do this! If you have a complex model that already took a long time to run, this check will take at least twice as much time…"
   },
   {
     "objectID": "Presentations/Part2/Slides_Part2.html#your-turn-2",
@@ -1318,14 +1318,14 @@
     "href": "Presentations/Part2/Slides_Part2.html#plotting-the-posterior-distribution-histogram-1",
     "title": "Applied Bayesian Analyses in R",
     "section": "Plotting the posterior distribution histogram",
-    "text": "Plotting the posterior distribution histogram\n\nStep 2: create histogram making use of that object\n\n\npost_intercept &lt;- \n  posterior_PD %&gt;%\n  select(b_Intercept) %&gt;%\n  ggplot(aes(x = b_Intercept)) +\n  geom_histogram() +\n  ggtitle(\"Intercept\") \n\nWarning: Dropping 'draws_df' class as required metadata was removed.\n\npost_km4week &lt;- \n  posterior_PD %&gt;%\n  select(b_km4week) %&gt;%\n  ggplot(aes(x = b_km4week)) +\n  geom_histogram() +\n  ggtitle(\"Beta km4week\") \n\nWarning: Dropping 'draws_df' class as required metadata was removed.\n\npost_sp4week &lt;- \n  posterior_PD %&gt;%\n  select(b_sp4week) %&gt;%\n  ggplot(aes(x = b_sp4week)) +\n  geom_histogram() +\n  ggtitle(\"Beta sp4week\") \n\nWarning: Dropping 'draws_df' class as required metadata was removed."
+    "text": "Plotting the posterior distribution histogram\n\nStep 2: create histogram making use of that object\n\n\npost_intercept &lt;- \n  posterior_PD %&gt;%\n  select(b_Intercept) %&gt;%\n  ggplot(aes(x = b_Intercept)) +\n  geom_histogram() +\n  ggtitle(\"Intercept\") \n\npost_km4week &lt;- \n  posterior_PD %&gt;%\n  select(b_km4week) %&gt;%\n  ggplot(aes(x = b_km4week)) +\n  geom_histogram() +\n  ggtitle(\"Beta km4week\") \n\npost_sp4week &lt;- \n  posterior_PD %&gt;%\n  select(b_sp4week) %&gt;%\n  ggplot(aes(x = b_sp4week)) +\n  geom_histogram() +\n  ggtitle(\"Beta sp4week\")"
   },
   {
     "objectID": "Presentations/Part2/Slides_Part2.html#plotting-the-posterior-distribution-histogram-2",
     "href": "Presentations/Part2/Slides_Part2.html#plotting-the-posterior-distribution-histogram-2",
     "title": "Applied Bayesian Analyses in R",
     "section": "Plotting the posterior distribution histogram",
-    "text": "Plotting the posterior distribution histogram\n\nStep 3: print the plot making use of patchwork ’s workflow to combine plots \n\npost_intercept + post_km4week + post_sp4week +\n  plot_layout(ncol = 3)\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`."
+    "text": "Plotting the posterior distribution histogram\n\nStep 3: print the plot making use of patchwork ’s workflow to combine plots \n\npost_intercept + post_km4week + post_sp4week +\n  plot_layout(ncol = 3)"
   },
   {
     "objectID": "Presentations/Part2/Slides_Part2.html#posterior-predictive-check-1",
@@ -1367,7 +1367,7 @@
     "href": "Presentations/Part2/Slides_Part2.html#basic-table-with-indices",
     "title": "Applied Bayesian Analyses in R",
     "section": "Basic table with indices",
-    "text": "Basic table with indices\nFirst check is done by using the powerscale_sensitivity( ) function\n\ncolumn prior contains info on sensibility for prior (should be lower than 0.05)\ncolumn likelihood contains info on sensibility for likelihood (that we want to be high, ‘let our data speak’)\ncolumn diagnosis is a verbalization of potential problem (- if none)\n\n\npowerscale_sensitivity(MarathonTimes_Mod2)\n\nSensitivity based on cjs_dist:\n# A tibble: 4 × 4\n  variable       prior likelihood diagnosis\n  &lt;chr&gt;          &lt;dbl&gt;      &lt;dbl&gt; &lt;chr&gt;    \n1 b_Intercept 0.000853     0.0851 -        \n2 b_km4week   0.000512     0.0802 -        \n3 b_sp4week   0.000370     0.0831 -        \n4 sigma       0.00571      0.151  -"
+    "text": "Basic table with indices\nFirst check is done by using the powerscale_sensitivity( ) function\n\ncolumn prior contains info on sensibility for prior (should be lower than 0.05)\ncolumn likelihood contains info on sensibility for likelihood (that we want to be high, ‘let our data speak’)\ncolumn diagnosis is a verbalization of potential problem (- if none)\n\n\npowerscale_sensitivity(MarathonTimes_Mod2)"
   },
   {
     "objectID": "Presentations/Part2/Slides_Part2.html#visualization-of-prior-sensibility",
@@ -1491,14 +1491,14 @@
     "href": "Presentations/Part1/Slides_Part1.html#posterior-predictive-check-output",
     "title": "Applied Bayesian Analyses in R",
     "section": "Posterior-predictive check",
-    "text": "Posterior-predictive check\n\nUsing 10 posterior draws for ppc type 'dens_overlay' by default."
+    "text": "Posterior-predictive check"
   },
   {
     "objectID": "Presentations/Part1/Slides_Part1.html#model-comparison-with-loo-cross-validation-output",
     "href": "Presentations/Part1/Slides_Part1.html#model-comparison-with-loo-cross-validation-output",
     "title": "Applied Bayesian Analyses in R",
     "section": "Model comparison with loo cross-validation",
-    "text": "Model comparison with loo cross-validation\n\nWarning: Found 1 observations with a pareto_k &gt; 0.7 in model\n'MarathonTimes_Mod2'. We recommend to set 'moment_match = TRUE' in order to\nperform moment matching for problematic observations.\n\nComparison&lt;- \n  loo_compare(\n    loo_Mod1, \n    loo_Mod2\n    )\n\nprint(Comparison, simplify = F)\n\n                   elpd_diff se_diff elpd_loo se_elpd_loo p_loo  se_p_loo\nMarathonTimes_Mod2    0.0       0.0  -356.3     12.0         7.2    4.4  \nMarathonTimes_Mod1  -39.9      12.6  -396.2      5.3         1.7    0.3  \n                   looic  se_looic\nMarathonTimes_Mod2  712.6   24.0  \nMarathonTimes_Mod1  792.3   10.6"
+    "text": "Model comparison with loo cross-validation\n\n                   elpd_diff se_diff elpd_loo se_elpd_loo p_loo  se_p_loo\nMarathonTimes_Mod2    0.0       0.0  -356.3     12.0         7.2    4.4  \nMarathonTimes_Mod1  -39.9      12.6  -396.2      5.3         1.7    0.3  \n                   looic  se_looic\nMarathonTimes_Mod2  712.6   24.0  \nMarathonTimes_Mod1  792.3   10.6"
   },
   {
     "objectID": "index.html#welcome",
@@ -1509,5 +1509,194 @@
     "crumbs": [
       "Welcome"
     ]
+  },
+  {
+    "objectID": "Presentations/Part3/Slides_Part3.html#the-mcmc_areas-function-output",
+    "href": "Presentations/Part3/Slides_Part3.html#the-mcmc_areas-function-output",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "The mcmc_areas() function",
+    "text": "The mcmc_areas() function"
+  },
+  {
+    "objectID": "Presentations/Part3/Slides_Part3.html#the-mcmc_areas_ridges-function-output",
+    "href": "Presentations/Part3/Slides_Part3.html#the-mcmc_areas_ridges-function-output",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "The mcmc_areas_ridges() function",
+    "text": "The mcmc_areas_ridges() function"
+  },
+  {
+    "objectID": "Presentations/Part3/Slides_Part3.html#the-mcmc_intervals-function-output",
+    "href": "Presentations/Part3/Slides_Part3.html#the-mcmc_intervals-function-output",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "The mcmc_intervals() function",
+    "text": "The mcmc_intervals() function"
+  },
+  {
+    "objectID": "Presentations/Part3/Slides_Part3.html#manually-create-visualizations-output",
+    "href": "Presentations/Part3/Slides_Part3.html#manually-create-visualizations-output",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Manually create visualizations",
+    "text": "Manually create visualizations\n\n# A draws_df: 6 iterations, 1 chains, and 49 variables\n  b_Intercept b_FirstVersion_GM b_Experimental_condition sd_Class__Intercept\n1         113              0.98                      4.7                 5.2\n2         112              1.47                      5.1                 2.8\n3         113              1.07                      3.5                 2.8\n4         111              1.09                      4.7                 4.2\n5         112              1.08                      4.0                 1.7\n6         111              1.04                      5.0                 2.4\n  sd_Class__FirstVersion_GM cor_Class__Intercept__FirstVersion_GM sigma\n1                      0.93                                  0.77   7.4\n2                      1.06                                  0.68   8.1\n3                      0.88                                  0.79   7.1\n4                      0.75                                  0.74   8.0\n5                      0.94                                  0.78   7.1\n6                      0.97                                  0.82   8.1\n  r_Class[1,Intercept]\n1                 1.84\n2                -1.59\n3                -0.60\n4                 0.95\n5                 0.81\n6                 0.38\n# ... with 41 more variables\n# ... hidden reserved variables {'.chain', '.iteration', '.draw'}"
+  },
+  {
+    "objectID": "Presentations/Part3/Slides_Part3.html#an-example-1-output",
+    "href": "Presentations/Part3/Slides_Part3.html#an-example-1-output",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "An example",
+    "text": "An example"
+  },
+  {
+    "objectID": "Presentations/Part3/Slides_Part3.html#change-the-cis-output",
+    "href": "Presentations/Part3/Slides_Part3.html#change-the-cis-output",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Change the CI’s",
+    "text": "Change the CI’s"
+  },
+  {
+    "objectID": "Presentations/Part3/Slides_Part3.html#use-another-visualization-output",
+    "href": "Presentations/Part3/Slides_Part3.html#use-another-visualization-output",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Use another visualization",
+    "text": "Use another visualization"
+  },
+  {
+    "objectID": "Presentations/Part3/Slides_Part3.html#plot-two-parameters-each-in-a-facet-output",
+    "href": "Presentations/Part3/Slides_Part3.html#plot-two-parameters-each-in-a-facet-output",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Plot two parameters each in a facet",
+    "text": "Plot two parameters each in a facet"
+  },
+  {
+    "objectID": "Presentations/Part3/Slides_Part3.html#visualize-calculated-predictions-based-on-posterior-output",
+    "href": "Presentations/Part3/Slides_Part3.html#visualize-calculated-predictions-based-on-posterior-output",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Visualize calculated predictions based on posterior",
+    "text": "Visualize calculated predictions based on posterior"
+  },
+  {
+    "objectID": "Presentations/Part3/Slides_Part3.html#plotting-the-residuals-1-output",
+    "href": "Presentations/Part3/Slides_Part3.html#plotting-the-residuals-1-output",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Plotting the residuals",
+    "text": "Plotting the residuals"
+  },
+  {
+    "objectID": "Presentations/Part3/Slides_Part3.html#icc-estimation-1-output",
+    "href": "Presentations/Part3/Slides_Part3.html#icc-estimation-1-output",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "ICC estimation",
+    "text": "ICC estimation"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#posterior-predictive-check-output",
+    "href": "Presentations/Part2/Slides_Part2.html#posterior-predictive-check-output",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Posterior-predictive check",
+    "text": "Posterior-predictive check"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#model-comparison-with-loo-cross-validation-output",
+    "href": "Presentations/Part2/Slides_Part2.html#model-comparison-with-loo-cross-validation-output",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Model comparison with loo cross-validation",
+    "text": "Model comparison with loo cross-validation\n\n                   elpd_diff se_diff elpd_loo se_elpd_loo p_loo  se_p_loo\nMarathonTimes_Mod2    0.0       0.0  -356.3     12.0         7.2    4.4  \nMarathonTimes_Mod1  -39.9      12.6  -396.2      5.3         1.7    0.3  \n                   looic  se_looic\nMarathonTimes_Mod2  712.6   24.0  \nMarathonTimes_Mod1  792.3   10.6"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#visualizing-priors-1-output",
+    "href": "Presentations/Part2/Slides_Part2.html#visualizing-priors-1-output",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Visualizing priors",
+    "text": "Visualizing priors\n\n\n\n\nProbability density plots for the different priors used in the example model"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#prior-predictive-check-in-brms-1-output",
+    "href": "Presentations/Part2/Slides_Part2.html#prior-predictive-check-in-brms-1-output",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Prior Predictive Check in brms",
+    "text": "Prior Predictive Check in brms"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#check-some-summary-statistics-output",
+    "href": "Presentations/Part2/Slides_Part2.html#check-some-summary-statistics-output",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Check some summary statistics",
+    "text": "Check some summary statistics"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#does-the-trace-plot-exhibits-convergence-output",
+    "href": "Presentations/Part2/Slides_Part2.html#does-the-trace-plot-exhibits-convergence-output",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Does the trace-plot exhibits convergence?",
+    "text": "Does the trace-plot exhibits convergence?\n\n\n\n\nCaterpillar plots for the parameters in the model"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#r-hat-in-brms-output",
+    "href": "Presentations/Part2/Slides_Part2.html#r-hat-in-brms-output",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "R-hat in brms",
+    "text": "R-hat in brms"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#ratio-effective-sample-size-total-sample-size-output",
+    "href": "Presentations/Part2/Slides_Part2.html#ratio-effective-sample-size-total-sample-size-output",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Ratio effective sample size / total sample size",
+    "text": "Ratio effective sample size / total sample size"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#plot-degree-of-autocorrelation-output",
+    "href": "Presentations/Part2/Slides_Part2.html#plot-degree-of-autocorrelation-output",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Plot degree of autocorrelation",
+    "text": "Plot degree of autocorrelation"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#rank-order-plots-output",
+    "href": "Presentations/Part2/Slides_Part2.html#rank-order-plots-output",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Rank order plots",
+    "text": "Rank order plots"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#plotting-the-posterior-distribution-histogram-2-output",
+    "href": "Presentations/Part2/Slides_Part2.html#plotting-the-posterior-distribution-histogram-2-output",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Plotting the posterior distribution histogram",
+    "text": "Plotting the posterior distribution histogram"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#posterior-predictive-check-1-output",
+    "href": "Presentations/Part2/Slides_Part2.html#posterior-predictive-check-1-output",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Posterior Predictive Check",
+    "text": "Posterior Predictive Check"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#posterior-predictive-check-2-output",
+    "href": "Presentations/Part2/Slides_Part2.html#posterior-predictive-check-2-output",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Posterior Predictive Check",
+    "text": "Posterior Predictive Check"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#basic-table-with-indices-output",
+    "href": "Presentations/Part2/Slides_Part2.html#basic-table-with-indices-output",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Basic table with indices",
+    "text": "Basic table with indices\n\nSensitivity based on cjs_dist:\n# A tibble: 4 × 4\n  variable       prior likelihood diagnosis\n  &lt;chr&gt;          &lt;dbl&gt;      &lt;dbl&gt; &lt;chr&gt;    \n1 b_Intercept 0.000853     0.0851 -        \n2 b_km4week   0.000512     0.0802 -        \n3 b_sp4week   0.000370     0.0831 -        \n4 sigma       0.00571      0.151  -"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#visualization-of-prior-sensibility-output",
+    "href": "Presentations/Part2/Slides_Part2.html#visualization-of-prior-sensibility-output",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Visualization of prior sensibility",
+    "text": "Visualization of prior sensibility"
+  },
+  {
+    "objectID": "Presentations/Part2/Slides_Part2.html#visualization-of-prior-sensibility-1-output",
+    "href": "Presentations/Part2/Slides_Part2.html#visualization-of-prior-sensibility-1-output",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Visualization of prior sensibility",
+    "text": "Visualization of prior sensibility"
   }
 ]

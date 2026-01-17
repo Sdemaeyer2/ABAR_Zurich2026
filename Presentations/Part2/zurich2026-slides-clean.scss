@@ -1,0 +1,88 @@
+/*-- scss:rules --*/
+
+// =========================================
+// Zurich 2026 Theme — Reveal.js (Quarto)
+// =========================================
+
+// Kleuren geïnspireerd op zonsopgang in de bergen
+$body-bg: #f8f4f0;
+$body-color: #5a4a40;
+$link-color: #e36c18;
+$link-hover-color: #c35914;
+$code-color: #82654f;
+$accent: #d28e43;
+$border-color: #e2d7c6;
+
+// ==============================
+// Tekstkleur voor titels/slides
+// ==============================
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4 {
+  color: $body-color;
+}
+
+// ==============================
+// Links en accenten
+// ==============================
+.reveal a {
+  color: $link-color;
+  text-decoration: underline;
+}
+
+.reveal a:hover {
+  color: $link-hover-color;
+}
+
+// ==============================
+// Code blocks
+// ==============================
+.reveal code {
+  color: $code-color;
+  background-color: lighten($border-color, 5%);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+}
+
+// ==============================
+// Lists
+// ==============================
+.reveal ul li::marker {
+  color: $accent;
+}
+
+.reveal ol li::marker {
+  color: $accent;
+}
+
+// ==============================
+// Footer: slide number
+// ==============================
+.reveal .slide-number {
+  color: $code-color;
+}
+
+// ==============================
+// Progress bar
+// ==============================
+.reveal .progress {
+  background: lighten($border-color, 10%);
+}
+
+.reveal .progress span {
+  background: $accent;
+}
+
+// ==============================
+// Menu knop linksonder
+// ==============================
+.reveal .slide-menu-button {
+  color: $code-color;
+  opacity: 0.8;
+}
+
+.reveal .slide-menu-button:hover {
+  color: $link-color;
+  opacity: 1;
+}
