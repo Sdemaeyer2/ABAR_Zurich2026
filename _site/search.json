@@ -1698,5 +1698,115 @@
     "title": "Applied Bayesian Analyses in R",
     "section": "Visualization of prior sensibility",
     "text": "Visualization of prior sensibility"
+  },
+  {
+    "objectID": "Part4.html",
+    "href": "Part4.html",
+    "title": "Part 4: Integrated exercise",
+    "section": "",
+    "text": "In the final part, you can apply all the insights of the course on your own research by analysing your own data using a Bayesian approach. If you have no concrete dataset yet to apply the Bayesian analyses, you can execute the integrated exercise (see below).",
+    "crumbs": [
+      "Part4"
+    ]
+  },
+  {
+    "objectID": "Part4.html#outline",
+    "href": "Part4.html#outline",
+    "title": "Part 4: Integrated exercise",
+    "section": "",
+    "text": "In the final part, you can apply all the insights of the course on your own research by analysing your own data using a Bayesian approach. If you have no concrete dataset yet to apply the Bayesian analyses, you can execute the integrated exercise (see below).",
+    "crumbs": [
+      "Part4"
+    ]
+  },
+  {
+    "objectID": "Part4.html#integrated-exercise",
+    "href": "Part4.html#integrated-exercise",
+    "title": "Part 4: Integrated exercise",
+    "section": "Integrated exercise",
+    "text": "Integrated exercise\nOn the following page you can find an html file with the tasks for this exercise: click here\nThe dataset for this exercise can be downloaded here: Subtitles.RData\nIf you are stuck while making this exercise, you can consult an example response here",
+    "crumbs": [
+      "Part4"
+    ]
+  },
+  {
+    "objectID": "Part4.html#references-and-resources",
+    "href": "Part4.html#references-and-resources",
+    "title": "Part 4: Integrated exercise",
+    "section": "References and resources",
+    "text": "References and resources\nThe data for the exercise is a simulated dataset based on the following study:\nFrumuselu, Anca Daniela, Sven De Maeyer, Vincent Donche, and María del Mar Gutiérrez Colon Plana. 2015. “Television Series Inside the EFL Classroom: Bridging the Gap Between Teaching and Learning Informal Language Through Subtitles.” Linguistics and Education 32 (December): 107–17. https://doi.org/10.1016/j.linged.2015.10.001.",
+    "crumbs": [
+      "Part4"
+    ]
+  },
+  {
+    "objectID": "Part2.html",
+    "href": "Part2.html",
+    "title": "Part 2: the WAMBS",
+    "section": "",
+    "text": "The second part of this workshop taps into the critical appraisal of your model. Bayesian analyses (as a matter a fact, all statistical analyses) are full of choices. So, as a researcher, it is our duty to understand what we are doing and provide evidence and arguments for the validity of our choices. To increase reproducibility, we tap into how you can use the WAMBS check-list to inform readers about our choices and decisions on the choice of priors, model convergence, and prior sensitivity.",
+    "crumbs": [
+      "Part2"
+    ]
+  },
+  {
+    "objectID": "Part2.html#outline",
+    "href": "Part2.html#outline",
+    "title": "Part 2: the WAMBS",
+    "section": "",
+    "text": "The second part of this workshop taps into the critical appraisal of your model. Bayesian analyses (as a matter a fact, all statistical analyses) are full of choices. So, as a researcher, it is our duty to understand what we are doing and provide evidence and arguments for the validity of our choices. To increase reproducibility, we tap into how you can use the WAMBS check-list to inform readers about our choices and decisions on the choice of priors, model convergence, and prior sensitivity.",
+    "crumbs": [
+      "Part2"
+    ]
+  },
+  {
+    "objectID": "Part2.html#materials",
+    "href": "Part2.html#materials",
+    "title": "Part 2: the WAMBS",
+    "section": "Materials",
+    "text": "Materials\n\nSlides\nThe htlm-version of the slides for this part can be found here\n\n\nData\nFor this part, we again use the straightforward dataset on predicting racetimes for a marathon. The data can be downloaded  here  (right-click to save as).",
+    "crumbs": [
+      "Part2"
+    ]
+  },
+  {
+    "objectID": "Part2.html#references-and-resources",
+    "href": "Part2.html#references-and-resources",
+    "title": "Part 2: the WAMBS",
+    "section": "References and resources",
+    "text": "References and resources\nDepaoli, S., & Van de Schoot, R. (2017). Improving transparency and replication in Bayesian statistics: The WAMBS-Checklist. Psychological methods, 22(2), 240.\nVan de Schoot, R., Veen, D., Smeets, L., Winter, S. D., & Depaoli, S. (2020). A tutorial on using the WAMBS checklist to avoid the misuse of Bayesian statistics. Small Sample Size Solutions: A Guide for Applied Researchers and Practitioners; van de Schoot, R., Miocevic, M., Eds, 30-49.\nSee the WAMBS page on this website for the template we use.\nAlternative for the WAMBS is the BARG:\nKruschke, J. K. (2021). Bayesian Analysis Reporting Guidelines. Nature Human Behaviour, 5(10), Article 10. https://doi.org/10.1038/s41562-021-01177-7",
+    "crumbs": [
+      "Part2"
+    ]
+  },
+  {
+    "objectID": "Part3.html",
+    "href": "Part3.html",
+    "title": "Part 3: Reporting and visualizing",
+    "section": "",
+    "text": "This part of the workshop is about interpreting and reporting the results of our models. Here we demonstrate different ways to make sense of the information in our posterior probability distributions for our parameters. First, we will show how different packages in R can be used to visually explore the posterior probability distributions. Next, we focus on how to numerically summarize the information in the posterior probability distribution in order to support our reporting on the results.\n\n\nThe htlm-version of the slides for this first part can be found here\n\n\n\nFor this first part, we used a dataset on the effect of a writing intervention. The data can be downloaded  here  (right-click to save as).\n\n\n\nA powerful way to visualize the effects of (mixed effects) regression models, is to plot Hypothetical Outcome Plots. These type of plots need a considerable amount of coding. Therefore, we provide two R-scripts that can be used as a starting point to plot your own results:\n\n HOP_Script.R \n HOP_MixedEffects_Script.R",
+    "crumbs": [
+      "Part3"
+    ]
+  },
+  {
+    "objectID": "Part3.html#outline",
+    "href": "Part3.html#outline",
+    "title": "Part 3: Reporting and visualizing",
+    "section": "",
+    "text": "This part of the workshop is about interpreting and reporting the results of our models. Here we demonstrate different ways to make sense of the information in our posterior probability distributions for our parameters. First, we will show how different packages in R can be used to visually explore the posterior probability distributions. Next, we focus on how to numerically summarize the information in the posterior probability distribution in order to support our reporting on the results.\n\n\nThe htlm-version of the slides for this first part can be found here\n\n\n\nFor this first part, we used a dataset on the effect of a writing intervention. The data can be downloaded  here  (right-click to save as).\n\n\n\nA powerful way to visualize the effects of (mixed effects) regression models, is to plot Hypothetical Outcome Plots. These type of plots need a considerable amount of coding. Therefore, we provide two R-scripts that can be used as a starting point to plot your own results:\n\n HOP_Script.R \n HOP_MixedEffects_Script.R",
+    "crumbs": [
+      "Part3"
+    ]
+  },
+  {
+    "objectID": "Part3.html#references-and-resources",
+    "href": "Part3.html#references-and-resources",
+    "title": "Part 3: Reporting and visualizing",
+    "section": "References and resources",
+    "text": "References and resources\nMore on the bayesplot package:  https://mc-stan.org/bayesplot/ \nMore on the ggdist package:  https://mjskay.github.io/ggdist/reference/index.html \nPapers on the use of quantile dotplots:\n\n https://dl.acm.org/doi/10.1145/2858036.2858558 \n https://www.mjskay.com/papers/chi2018-uncertain-bus-decisions.pdf",
+    "crumbs": [
+      "Part3"
+    ]
   }
 ]
