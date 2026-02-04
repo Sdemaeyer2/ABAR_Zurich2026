@@ -64,7 +64,7 @@ Throughout the different presentations we will also increase model complexity
 
 All material is on the on-line dashboard:
 
-<https://abar-turku-2025.netlify.app/>
+<https://barzurich2026.netlify.app/>
 
 You can find:
 
