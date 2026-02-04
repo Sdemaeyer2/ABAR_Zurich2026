@@ -968,7 +968,7 @@
     "href": "Presentations/Part2/Slides_Part2.html#your-turn",
     "title": "Applied Bayesian Analyses in R",
     "section": " Your Turn",
-    "text": "Your Turn\n\nOpen MarathonData.RData\nEstimate your first Bayesian Models\nDependent variable: MarathonTimeM\nModel1: only an intercept\nModel2: introduce the effect of km4week and sp4week on MarathonTimeM\nChange the brms defaults (4 chains of 6000 iterations)\nMake plots with the plot() function\nWhat do we learn? (rough interpretation)\n\n\n\nNote: I centred both km4weekand sp4week around their mean!"
+    "text": "Your Turn\n\nYour data and model\nPerform a prior predictive check\nIf necessary re-think your priors and check again"
   },
   {
     "objectID": "Presentations/Part2/Slides_Part2.html#results-exercise",
@@ -1051,8 +1051,8 @@
     "objectID": "Presentations/Part2/Slides_Part2.html#posterior-predictive-check",
     "href": "Presentations/Part2/Slides_Part2.html#posterior-predictive-check",
     "title": "Applied Bayesian Analyses in R",
-    "section": "Posterior-predictive check",
-    "text": "Posterior-predictive check\nA visual check that can be performed with pp_check() from brms\n\npp_check(Mod_MT2) + theme_minimal()"
+    "section": "Posterior Predictive Check",
+    "text": "Posterior Predictive Check\n\nGenerate data based on the posterior probability distribution\nCreate plot of distribution of y-values in these simulated datasets\nOverlay with distribution of observed data\n\nusing pp_check() again, now with our model\n\npp_check(MarathonTimes_Mod2, \n         ndraws = 100)"
   },
   {
     "objectID": "Presentations/Part2/Slides_Part2.html#model-comparison-with-loo-cross-validation",
@@ -1206,7 +1206,7 @@
     "href": "Presentations/Part2/Slides_Part2.html#your-turn-1",
     "title": "Applied Bayesian Analyses in R",
     "section": " Your Turn",
-    "text": "Your Turn\n\nYour data and model\nPerform a prior predictive check\nIf necessary re-think your priors and check again"
+    "text": "Your Turn\n\nYour data and model\nDo the first checks on the model convergence"
   },
   {
     "objectID": "Presentations/Part2/Slides_Part2.html#does-the-trace-plot-exhibits-convergence",
@@ -1227,7 +1227,7 @@
     "href": "Presentations/Part2/Slides_Part2.html#your-turn-2",
     "title": "Applied Bayesian Analyses in R",
     "section": " Your Turn",
-    "text": "Your Turn\n\nYour data and model\nDo the first checks on the model convergence"
+    "text": "Your Turn\n\nYour data and model\nCheck the R-hat statistics"
   },
   {
     "objectID": "Presentations/Part2/Slides_Part2.html#r-hat-statistics",
@@ -1255,7 +1255,7 @@
     "href": "Presentations/Part2/Slides_Part2.html#your-turn-3",
     "title": "Applied Bayesian Analyses in R",
     "section": " Your Turn",
-    "text": "Your Turn\n\nYour data and model\nCheck the R-hat statistics"
+    "text": "Your Turn\n\nYour data and model\nCheck the autocorrelation"
   },
   {
     "objectID": "Presentations/Part2/Slides_Part2.html#autocorrelation",
@@ -1283,7 +1283,7 @@
     "href": "Presentations/Part2/Slides_Part2.html#your-turn-4",
     "title": "Applied Bayesian Analyses in R",
     "section": " Your Turn",
-    "text": "Your Turn\n\nYour data and model\nCheck the autocorrelation"
+    "text": "Your Turn\n\nYour data and model\nCheck the rank order plots"
   },
   {
     "objectID": "Presentations/Part2/Slides_Part2.html#rank-order-plots",
@@ -1297,7 +1297,7 @@
     "href": "Presentations/Part2/Slides_Part2.html#your-turn-5",
     "title": "Applied Bayesian Analyses in R",
     "section": " Your Turn",
-    "text": "Your Turn\n\nYour data and model\nCheck the rank order plots"
+    "text": "Your Turn\n\nYour data and model\nFocus on the posterior and do some checks!"
   },
   {
     "objectID": "Presentations/Part2/Slides_Part2.html#does-the-posterior-distribution-histogram-have-enough-information",
@@ -1332,7 +1332,7 @@
     "href": "Presentations/Part2/Slides_Part2.html#posterior-predictive-check-1",
     "title": "Applied Bayesian Analyses in R",
     "section": "Posterior Predictive Check",
-    "text": "Posterior Predictive Check\n\nGenerate data based on the posterior probability distribution\nCreate plot of distribution of y-values in these simulated datasets\nOverlay with distribution of observed data\n\nusing pp_check() again, now with our model\n\npp_check(MarathonTimes_Mod2, \n         ndraws = 100)"
+    "text": "Posterior Predictive Check\n\nWe can also focus on some summary statistics (like we did with prior predictive checks as well)\n\n\npp_check(MarathonTimes_Mod2, \n         ndraws = 300,\n         type = \"stat\",\n         stat = \"median\")"
   },
   {
     "objectID": "Presentations/Part2/Slides_Part2.html#posterior-predictive-check-2",
@@ -1346,7 +1346,7 @@
     "href": "Presentations/Part2/Slides_Part2.html#your-turn-6",
     "title": "Applied Bayesian Analyses in R",
     "section": " Your Turn",
-    "text": "Your Turn\n\nYour data and model\nFocus on the posterior and do some checks!"
+    "text": "Your Turn\n\nYour data and model\nCheck the prior sensibility of your results"
   },
   {
     "objectID": "Presentations/Part2/Slides_Part2.html#why-prior-sensibility-analyses",
@@ -1591,8 +1591,8 @@
     "objectID": "Presentations/Part2/Slides_Part2.html#posterior-predictive-check-output",
     "href": "Presentations/Part2/Slides_Part2.html#posterior-predictive-check-output",
     "title": "Applied Bayesian Analyses in R",
-    "section": "Posterior-predictive check",
-    "text": "Posterior-predictive check"
+    "section": "Posterior Predictive Check",
+    "text": "Posterior Predictive Check"
   },
   {
     "objectID": "Presentations/Part2/Slides_Part2.html#model-comparison-with-loo-cross-validation-output",
