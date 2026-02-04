@@ -703,7 +703,7 @@ tab_model(
 
 This table clearly demonstrates how the model making use of the default priors has different results than the model with the priors we had set ourselves!
 
-If we think about this more profoundly this doesn't have to come as a surprise! The priors used for the effect of Occasion was maybe nonsense. Why not assuming that students got more fluent over the time course of 26 weeks? To be fairly honest, I deliberately used these priors that seemed uninformative so that we would - for didactical reasons - run into this issue! 
+If we think about this more profoundly this doesn't have to come as a surprise! The priors used for the effect of Occasion was maybe nonsense. Why not assuming that students got more fluent over the time course of 26 weeks? To be fairly honest, I deliberately used these priors that seemed uninformative so that we would - for didactical reasons - run into this issue ;-)! 
 
 For the rest of the exercise we will stick to the results of the model with default priors. But, another option could be to change our custom priors, mimicking the idea that we expect students to become more fluent on the course of 26 weeks. That's what I actually did in a blogpost that I wrote about using the `priorsense` package that can be found here: [https://sdemaeyer.quarto.pub/posts/2024-02-PriorSense/PriorSensePost.html](https://sdemaeyer.quarto.pub/posts/2024-02-PriorSense/PriorSensePost.html)
 
@@ -909,7 +909,7 @@ posterior_M3 %>%
   
 ```
 
-From this visualisation we learn that the progress between occasion 1 and 2 is rather similar in both subtitle groups (intervals strongly overlap). The students in the condition without subtitles make a smaller progress between occasion 1 and occasion 2 than the students in both subtitling conditions.
+From this visualization we learn that the progress between occasion 1 and 2 is rather similar in both subtitle groups (intervals strongly overlap). The students in the condition without subtitles make a smaller progress between occasion 1 and occasion 2 than the students in both subtitling conditions.
 
 Focussing on the progress between occasion 2 and 3, we see that the progress of the students in the foreign language subtitling condition stands out from the progress made in the two other conditions.
 

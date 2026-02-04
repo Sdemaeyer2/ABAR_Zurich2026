@@ -18,8 +18,8 @@ Given that a workflow in `R` will be introduced, it is advised that participants
 
 | When?  | Where    |
 |:--------|:-------|
-| Thursday 5th of February |  |
-| Friday 6th of February |  |
+| Thursday 5th of February (9am - 5pm) | FRE D-20  |
+| Friday 6th of February (9am - 5pm) | FRE D-20 |
 
 
 This site bundles all the material used for the course. Or you can download all the materials on <a href="https://github.com/Sdemaeyer2/ABAR_Zurich2026" target="_blank">the github page </a>. 
