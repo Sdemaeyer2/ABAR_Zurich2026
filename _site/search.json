@@ -384,7 +384,7 @@
     "href": "Presentations/Part1/Slides_Part1.html#frequentistic-statistical-inference-with-data",
     "title": "Applied Bayesian Analyses in R",
     "section": "Frequentistic statistical inference (with data…)",
-    "text": "Frequentistic statistical inference (with data…)\nMaximal Likelihood estimation:\n\n\n\n\nCall:\nlm(formula = MarathonTimeM ~ km4week, data = MarathonData)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-42.601 -12.469  -0.536  12.816  38.670 \n\nCoefficients:\n             Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept) 199.14483    1.93856 102.728  &lt; 2e-16 ***\nkm4week      -0.50907    0.07233  -7.038 4.68e-10 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 18.08 on 85 degrees of freedom\nMultiple R-squared:  0.3682,    Adjusted R-squared:  0.3608 \nF-statistic: 49.53 on 1 and 85 DF,  p-value: 4.675e-10\n\n\n\n\n\nData comes from https://www.kaggle.com/datasets/girardi69/marathon-time-predictions?resource=download"
+    "text": "Frequentistic statistical inference (with data…)\nMaximum Likelihood estimation:\n\n\n\n\nCall:\nlm(formula = MarathonTimeM ~ km4week, data = MarathonData)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-42.601 -12.469  -0.536  12.816  38.670 \n\nCoefficients:\n             Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept) 199.14483    1.93856 102.728  &lt; 2e-16 ***\nkm4week      -0.50907    0.07233  -7.038 4.68e-10 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 18.08 on 85 degrees of freedom\nMultiple R-squared:  0.3682,    Adjusted R-squared:  0.3608 \nF-statistic: 49.53 on 1 and 85 DF,  p-value: 4.675e-10\n\n\n\n\n\nData comes from https://www.kaggle.com/datasets/girardi69/marathon-time-predictions?resource=download"
   },
   {
     "objectID": "Presentations/Part1/Slides_Part1.html#frequentistic-statistical-inference-interpretation",
@@ -482,14 +482,14 @@
     "href": "Presentations/Part1/Slides_Part1.html#lets-apply-this-idea-2",
     "title": "Applied Bayesian Analyses in R",
     "section": "Let’s apply this idea",
-    "text": "Let’s apply this idea\nOur data:\n\n\n [1] 185 193 240 245 155 234 189 196 206 263"
+    "text": "Let’s apply this idea\nOur data:\n\nMT &lt;- c(\n  185,\n  193,\n  240,\n  245,\n  155, ## whoow; flying!\n  234,\n  189,\n  196,\n  206,\n  263)\nMT\n\n [1] 185 193 240 245 155 234 189 196 206 263"
   },
   {
     "objectID": "Presentations/Part1/Slides_Part1.html#lets-apply-this-idea-3",
     "href": "Presentations/Part1/Slides_Part1.html#lets-apply-this-idea-3",
     "title": "Applied Bayesian Analyses in R",
     "section": "Let’s apply this idea",
-    "text": "Let’s apply this idea\nWhat is the posterior probability of mu = 180 combined with a sigma = 15?\n\n\n\n# Calculate the likelihood of the data\n# given these parameter values of\n# mu = 180 ; sigma = 15\n# remember MT contains our data\nLikelihood &lt;- \n  sum(\n      dnorm(\n        MT ,\n        mean=180 ,\n        sd=15)\n      )\nLikelihood\n\n[1] 0.09330546\n\n\n\n\n# Calculate our Prior belief\n\nPrior &lt;- dnorm(180, 210 , 30 ) * dunif(15 , 1 , 40 )\n\nPrior\n\n[1] 0.0002068126\n\n\n\n\n# Calculate posterior as product \n# of Likelihood and Prior\n\nProduct &lt;- Likelihood * Prior\n\nProduct\n\n[1] 0.00001929674"
+    "text": "Let’s apply this idea\nWhat is the posterior probability of mu = 180 combined with a sigma = 15?\n\n\n\n# Calculate the likelihood of the data\n# given these parameter values of\n# mu = 180 ; sigma = 15\n# remember MT contains our data\nLikelihood &lt;- \n  sum(\n      dnorm(\n        MT ,\n        mean=180 ,\n        sd=15)\n      )\nLikelihood\n\n[1] 0.09330546\n\n\n\n\n# Calculate our Prior belief\n\nPrior &lt;- dnorm(180, 210 , 30 ) * \n  dunif(15 , 1 , 40 )\n\nPrior\n\n[1] 0.0002068126\n\n\n\n\n# Calculate posterior as product \n# of Likelihood and Prior\n\nProduct &lt;- Likelihood * Prior\n\nProduct\n\n[1] 0.00001929674"
   },
   {
     "objectID": "Presentations/Part1/Slides_Part1.html#lets-apply-this-idea-4",
@@ -1808,5 +1808,19 @@
     "crumbs": [
       "Part3"
     ]
+  },
+  {
+    "objectID": "Presentations/Part1/Slides_Part1.html#grid-approximation-applied-1",
+    "href": "Presentations/Part1/Slides_Part1.html#grid-approximation-applied-1",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Grid approximation applied",
+    "text": "Grid approximation applied"
+  },
+  {
+    "objectID": "Presentations/Part1/Slides_Part1.html#grid-approximation-applied-2",
+    "href": "Presentations/Part1/Slides_Part1.html#grid-approximation-applied-2",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Grid approximation applied",
+    "text": "Grid approximation applied"
   }
 ]

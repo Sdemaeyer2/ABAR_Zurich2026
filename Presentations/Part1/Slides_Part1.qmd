@@ -98,7 +98,7 @@ Of course, we are not interested in the value of $\beta_1$ in the sample, but we
 
 ## Frequentistic statistical inference (with data...)
 
-Maximal Likelihood estimation:
+Maximum Likelihood estimation:
 
 ::: small-code
 ```{r}
@@ -339,7 +339,7 @@ curve( dunif( x , 1 , 40 ) , from=-5 , to=50 ,xlab="sigma", main="Prior for sigm
 
 Our [**data**]{style="color: #d28e43"}:
 
-```{r}
+```{r, echo = T}
 MT <- c(
   185,
   193,
@@ -391,7 +391,8 @@ Likelihood
 
 # Calculate our Prior belief
 
-Prior <- dnorm(180, 210 , 30 ) * dunif(15 , 1 , 40 )
+Prior <- dnorm(180, 210 , 30 ) * 
+  dunif(15 , 1 , 40 )
 
 Prior
 
@@ -533,6 +534,58 @@ post %>%
 C1: first combo of mu and sigma
 
 & C2: second combo of mu and sigma
+
+## Grid approximation applied
+
+```{r}
+set.seed(1975)
+
+post %>%
+  # sample 10000 rows
+  # with replacement
+  # higher prob higher prob to 
+  # be sampled
+  sample_n(size = 15000, 
+           replace = TRUE, 
+           weight = prob) %>%
+  
+  # create the plot
+  ggplot(aes(x = mu)) +
+  geom_density() +
+  theme_minimal() +
+  geom_vline(xintercept = 180, linetype="dotted", 
+                color = "blue") +
+  geom_vline(xintercept = 210, linetype="dotted", 
+                color = "green") +
+  ggtitle("Posterior Probability of average")
+
+```
+
+## Grid approximation applied
+
+```{r}
+set.seed(1975)
+
+post %>%
+  # sample 10000 rows
+  # with replacement
+  # higher prob higher prob to 
+  # be sampled
+  sample_n(size = 15000, 
+           replace = TRUE, 
+           weight = prob) %>%
+  
+  # create the plot
+  ggplot(aes(x = sigma)) +
+  geom_density() +
+  theme_minimal() +
+  geom_vline(xintercept = 15, linetype="dotted", 
+                color = "blue") +
+  geom_vline(xintercept = 30, linetype="dotted", 
+                color = "green") +
+  ggtitle("Posterior Probability of st.dev.")
+
+```
 
 ## Sampling parameter values
 
@@ -1087,7 +1140,7 @@ ModX <- brm(
 )
 ```
 
-# `r fontawesome::fa("laptop-code", "white")` Homework {background-color="#82654f" transition="slide-in"}
+# `r fontawesome::fa("laptop-code", "white")` Time to think! {background-color="#82654f" transition="slide-in"}
 
 Time to think about `your data` and research question
 
@@ -1096,4 +1149,3 @@ Time to think about `your data` and research question
 -   What are your `prior beliefs` about each of the parameters?
 -   Minimum and maximum values assumed for each parameter?
 -   Do all potential parameter values have a similar probability?
--   Bring along your notes to the next session!
