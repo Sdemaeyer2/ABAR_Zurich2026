@@ -12,10 +12,10 @@ lubridate
 Rcpp
 brms
 bayesplot
+ggmcmc
+patchwork
+priorsense
 metRology
 ggtext
-patchwork
-ggmcmc
-priorsense
 StanHeaders
 rstan

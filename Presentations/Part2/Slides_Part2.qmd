@@ -27,6 +27,7 @@ library(bayesplot)
 library(ggmcmc)
 library(patchwork)
 library(priorsense)
+library(rstan)
 
 load(
   file = here("Presentations", "MarathonData.RData")
@@ -451,6 +452,7 @@ Fit_Model_priors <-
 ```
 
 ```{r}
+
 Fit_Model_priors <- readRDS(
   here(
     "Presentations",
@@ -474,7 +476,7 @@ Step 2: visualize the data with the `pp_check( )` function
 
 set.seed(1975)
 
-pp_check(
+brms::pp_check(
   Fit_Model_priors, 
   ndraws = 300) # number of simulated datasets you wish for
 
@@ -805,7 +807,7 @@ Recently a package dedicated to prior sensibility analyses is launched
 #| eval: false
 #| echo: true
 # install.packages("remotes")
-remotes::install_github("n-kall/priorsense")
+remotes::install_github("n-kall/priorsense", force = T)
 ```
 
 Key-idea: power-scaling (both prior and likelihood)
