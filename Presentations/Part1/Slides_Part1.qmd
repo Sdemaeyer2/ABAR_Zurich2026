@@ -1019,17 +1019,6 @@ Comparison<-
 print(Comparison, simplify = F)
 ```
 
-## `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#82654f" transition="slide-in"}
-
--   Time to switch to `your dataset`
--   Think of `two alternative models` for a certain variable
--   Be naive! Let's `assume normality` and
--   `Keep it simple`
--   Estimate the two models
--   Compare the models
--   Interpret the best fitting model
--   Check the fit with `pp_check()`
-
 ## Family time
 
 `brms` defaults to `family = gaussian(link = "identity")`
