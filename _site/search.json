@@ -961,7 +961,7 @@
     "href": "Presentations/Part2/Slides_Part2.html",
     "title": "Applied Bayesian Analyses in R",
     "section": "",
-    "text": "here() starts at /Users/svendemaeyer/Library/CloudStorage/OneDrive-UniversiteitAntwerpen/Praatjes/Workshops/Zurich_2026/ABAR_Zurich26_Web\n\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.3     ✔ tidyr     1.3.1\n✔ purrr     1.0.2     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\nLoading required package: Rcpp\n\nLoading 'brms' package (version 2.22.0). Useful instructions\ncan be found by typing help('brms'). A more detailed introduction\nto the package is available through vignette('brms_overview').\n\n\nAttaching package: 'brms'\n\n\nThe following object is masked from 'package:stats':\n\n    ar\n\n\nThis is bayesplot version 1.12.0\n\n- Online documentation and vignettes at mc-stan.org/bayesplot\n\n- bayesplot theme set to bayesplot::theme_default()\n\n   * Does _not_ affect other ggplot2 plots\n\n   * See ?bayesplot_theme_set for details on theme setting\n\n\nAttaching package: 'bayesplot'\n\n\nThe following object is masked from 'package:brms':\n\n    rhat\n\n\nRegistered S3 method overwritten by 'GGally':\n  method from   \n  +.gg   ggplot2"
+    "text": "by Laurent Smeets and Rens van der Schoot\n\n\nBefore estimating the model:\n\nDo you understand the priors?\n\n\nAfter estimation before inspecting results:\n\nDoes the trace-plot exhibit convergence?\nDoes convergence remain after doubling the number of iterations?\nDoes the posterior distribution histogram have enough information?\nDo the chains exhibit a strong degree of autocorrelation?\nDo the posterior distributions make substantive sense?\n\n\nUnderstanding the exact influence of the priors\n\nDo different specification of the multivariate variance priors influence the results?\nIs there a notable effect of the prior when compared with non-informative priors?\nAre the results stable from a sensitivity analysis?\nIs the Bayesian way of interpreting and reporting model results used?\n\n\n\n\n\nTutorial source: https://www.rensvandeschoot.com/brms-wambs/ Alternatives exist as well like the BARG framework (Kruschke, J.K. Bayesian Analysis Reporting Guidelines. Nat Hum Behav 5, 1282–1291 (2021). https://doi.org/10.1038/s41562-021-01177-7)\n\n\n\n\nFile called WAMBS_workflow_MarathonData.qmd (quarto document)\nClick here  for the Quarto version\nCreate your own project and project folder\nCopy the template and rename it\nWe will go through the different parts in the slide show\nYou can apply/adapt the code in the template\nTo render the document properly with references, you also need the references.bib file \n\n\n\n\nIf you do not know how to use Projects in RStudio or the here package, these two sources might be helpfull:\nProjects: https://youtu.be/MdTtTN8PUqU?si=mmQGlU063EMt86B2\nhere package: https://youtu.be/oh3b3k5uM7E?si=0-heLJXfFVLtTohh\n\n\n\nPackages needed:\n\nlibrary(here)\nlibrary(tidyverse)\nlibrary(brms)\nlibrary(bayesplot)\nlibrary(ggmcmc)\nlibrary(patchwork)\nlibrary(priorsense)\n\n\n\n\nLoad the dataset and the model:\n\nload(\n  file = here(\"Presentations\", \"MarathonData.RData\")\n)\n\nMarathonTimes_Mod2 &lt;-\n  readRDS(file = \n            here(\"Presentations\",\n              \"Output\",\n              \"MarathonTimes_Mod2.RDS\")\n          )"
   },
   {
     "objectID": "Presentations/Part2/Slides_Part2.html#your-turn",
@@ -1065,36 +1065,36 @@
     "objectID": "Presentations/Part2/Slides_Part2.html#when-to-worry-and-how-to-avoid-misuse-of-bayesian-statistics",
     "href": "Presentations/Part2/Slides_Part2.html#when-to-worry-and-how-to-avoid-misuse-of-bayesian-statistics",
     "title": "Applied Bayesian Analyses in R",
-    "section": "When to Worry and How to Avoid Misuse of Bayesian Statistics",
-    "text": "When to Worry and How to Avoid Misuse of Bayesian Statistics\nby Laurent Smeets and Rens van der Schoot\n\n\nBefore estimating the model:\n\nDo you understand the priors?\n\n\nAfter estimation before inspecting results:\n\nDoes the trace-plot exhibit convergence?\nDoes convergence remain after doubling the number of iterations?\nDoes the posterior distribution histogram have enough information?\nDo the chains exhibit a strong degree of autocorrelation?\nDo the posterior distributions make substantive sense?\n\n\nUnderstanding the exact influence of the priors\n\nDo different specification of the multivariate variance priors influence the results?\nIs there a notable effect of the prior when compared with non-informative priors?\nAre the results stable from a sensitivity analysis?\nIs the Bayesian way of interpreting and reporting model results used?\n\n\n\n\nTutorial source: https://www.rensvandeschoot.com/brms-wambs/ Alternatives exist as well like the BARG framework (Kruschke, J.K. Bayesian Analysis Reporting Guidelines. Nat Hum Behav 5, 1282–1291 (2021). https://doi.org/10.1038/s41562-021-01177-7)"
+    "section": "",
+    "text": "by Laurent Smeets and Rens van der Schoot\n\n\nBefore estimating the model:\n\nDo you understand the priors?\n\n\nAfter estimation before inspecting results:\n\nDoes the trace-plot exhibit convergence?\nDoes convergence remain after doubling the number of iterations?\nDoes the posterior distribution histogram have enough information?\nDo the chains exhibit a strong degree of autocorrelation?\nDo the posterior distributions make substantive sense?\n\n\nUnderstanding the exact influence of the priors\n\nDo different specification of the multivariate variance priors influence the results?\nIs there a notable effect of the prior when compared with non-informative priors?\nAre the results stable from a sensitivity analysis?\nIs the Bayesian way of interpreting and reporting model results used?\n\n\n\n\n\nTutorial source: https://www.rensvandeschoot.com/brms-wambs/ Alternatives exist as well like the BARG framework (Kruschke, J.K. Bayesian Analysis Reporting Guidelines. Nat Hum Behav 5, 1282–1291 (2021). https://doi.org/10.1038/s41562-021-01177-7)"
   },
   {
     "objectID": "Presentations/Part2/Slides_Part2.html#wambs-template-to-use",
     "href": "Presentations/Part2/Slides_Part2.html#wambs-template-to-use",
     "title": "Applied Bayesian Analyses in R",
-    "section": "WAMBS Template to use",
-    "text": "WAMBS Template to use\n\nFile called WAMBS_workflow_MarathonData.qmd (quarto document)\nClick here  for the Quarto version\nCreate your own project and project folder\nCopy the template and rename it\nWe will go through the different parts in the slide show\nYou can apply/adapt the code in the template\nTo render the document properly with references, you also need the references.bib file"
+    "section": "",
+    "text": "File called WAMBS_workflow_MarathonData.qmd (quarto document)\nClick here  for the Quarto version\nCreate your own project and project folder\nCopy the template and rename it\nWe will go through the different parts in the slide show\nYou can apply/adapt the code in the template\nTo render the document properly with references, you also need the references.bib file"
   },
   {
     "objectID": "Presentations/Part2/Slides_Part2.html#side-path-projects-in-rstudio-and-the-here-package",
     "href": "Presentations/Part2/Slides_Part2.html#side-path-projects-in-rstudio-and-the-here-package",
     "title": "Applied Bayesian Analyses in R",
-    "section": "Side-path: projects in RStudio and the here package",
-    "text": "Side-path: projects in RStudio and the here package\nIf you do not know how to use Projects in RStudio or the here package, these two sources might be helpfull:\nProjects: https://youtu.be/MdTtTN8PUqU?si=mmQGlU063EMt86B2\nhere package: https://youtu.be/oh3b3k5uM7E?si=0-heLJXfFVLtTohh"
+    "section": "",
+    "text": "If you do not know how to use Projects in RStudio or the here package, these two sources might be helpfull:\nProjects: https://youtu.be/MdTtTN8PUqU?si=mmQGlU063EMt86B2\nhere package: https://youtu.be/oh3b3k5uM7E?si=0-heLJXfFVLtTohh"
   },
   {
     "objectID": "Presentations/Part2/Slides_Part2.html#preparations-for-applying-it-to-marathon-model",
     "href": "Presentations/Part2/Slides_Part2.html#preparations-for-applying-it-to-marathon-model",
     "title": "Applied Bayesian Analyses in R",
-    "section": "Preparations for applying it to Marathon model",
-    "text": "Preparations for applying it to Marathon model\nPackages needed:\n\nlibrary(here)\nlibrary(tidyverse)\nlibrary(brms)\nlibrary(bayesplot)\nlibrary(ggmcmc)\nlibrary(patchwork)\nlibrary(priorsense)"
+    "section": "",
+    "text": "Packages needed:\n\nlibrary(here)\nlibrary(tidyverse)\nlibrary(brms)\nlibrary(bayesplot)\nlibrary(ggmcmc)\nlibrary(patchwork)\nlibrary(priorsense)"
   },
   {
     "objectID": "Presentations/Part2/Slides_Part2.html#preparations-for-applying-it-to-marathon-model-1",
     "href": "Presentations/Part2/Slides_Part2.html#preparations-for-applying-it-to-marathon-model-1",
     "title": "Applied Bayesian Analyses in R",
-    "section": "Preparations for applying it to Marathon model",
-    "text": "Preparations for applying it to Marathon model\nLoad the dataset and the model:\n\nload(\n  file = here(\"Presentations\", \"MarathonData.RData\")\n)\n\nMarathonTimes_Mod2 &lt;-\n  readRDS(file = \n            here(\"Presentations\",\n              \"Output\",\n              \"MarathonTimes_Mod2.RDS\")\n          )"
+    "section": "",
+    "text": "Load the dataset and the model:\n\nload(\n  file = here(\"Presentations\", \"MarathonData.RData\")\n)\n\nMarathonTimes_Mod2 &lt;-\n  readRDS(file = \n            here(\"Presentations\",\n              \"Output\",\n              \"MarathonTimes_Mod2.RDS\")\n          )"
   },
   {
     "objectID": "Presentations/Part2/Slides_Part2.html#remember-priors-come-in-many-disguises",
@@ -1136,7 +1136,7 @@
     "href": "Presentations/Part2/Slides_Part2.html#visualizing-priors-1",
     "title": "Applied Bayesian Analyses in R",
     "section": "Visualizing priors",
-    "text": "Visualizing priors\n\nlibrary(metRology)\nlibrary(ggplot2)\nlibrary(ggtext)\nlibrary(patchwork)\n\n# Setting a plotting theme\ntheme_set(theme_linedraw() +\n            theme(text = element_text(family = \"Times\", size = 8),\n                  panel.grid = element_blank(),\n                  plot.title = element_markdown())\n)\n\n# Generate the plot for the prior of the Intercept (mu)\nPrior_mu &lt;- ggplot( ) +\n  stat_function(\n    fun = dt.scaled,    # We use the dt.scaled function of metRology\n    args = list(df = 3, mean = 199.2, sd = 24.9), # \n    xlim = c(120,300)\n  ) +\n  scale_y_continuous(name = \"density\") +\n  labs(title = \"Prior for the intercept\",\n       subtitle = \"student_t(3,199.2,24.9)\")\n\n# Generate the plot for the prior of the error variance (sigma)\nPrior_sigma &lt;- ggplot( ) +\n  stat_function(\n    fun = dt.scaled,    # We use the dt.scaled function of metRology\n    args = list(df = 3, mean = 0, sd = 24.9), # \n    xlim = c(0,6)\n  ) +\n  scale_y_continuous(name = \"density\") +\n  labs(title = \"Prior for the residual variance\",\n       subtitle = \"student_t(3,0,24.9)\")\n\n# Generate the plot for the prior of the effects of independent variables\nPrior_betas &lt;- ggplot( ) +\n  stat_function(\n    fun = dnorm,    # We use the normal distribution\n    args = list(mean = 0, sd = 10), # \n    xlim = c(-20,20)\n  ) +\n  scale_y_continuous(name = \"density\") +\n  labs(title = \"Prior for the effects of independent variables\",\n       subtitle = \"N(0,10)\")\n\nPrior_mu + Prior_sigma + Prior_betas +\n  plot_layout(ncol = 3)"
+    "text": "Visualizing priors\n\nlibrary(metRology)\nlibrary(ggplot2)\nlibrary(ggtext)\nlibrary(patchwork)\n\n# Setting a plotting theme\ntheme_set(theme_linedraw() +\n            theme(text = element_text(family = \"Times\", size = 8),\n                  panel.grid = element_blank(),\n                  plot.title = element_markdown())\n)\n\n# Generate the plot for the prior of the Intercept (mu)\nPrior_mu &lt;- ggplot( ) +\n  stat_function(\n    fun = dt.scaled,    # We use the dt.scaled function of metRology\n    args = list(df = 3, mean = 199.2, sd = 24.9), # \n    xlim = c(120,300)\n  ) +\n  scale_y_continuous(name = \"density\") +\n  labs(title = \"Prior for the intercept\",\n       subtitle = \"student_t(3,199.2,24.9)\")\n\n# Generate the plot for the prior of the error variance (sigma)\nPrior_sigma &lt;- ggplot( ) +\n  stat_function(\n    fun = dt.scaled,    # We use the dt.scaled function of metRology\n    args = list(df = 3, mean = 0, sd = 24.9), # \n    xlim = c(0,6)\n  ) +\n  scale_y_continuous(name = \"density\") +\n  labs(title = \"Prior for the residual variance\",\n       subtitle = \"student_t(3,0,24.9)\")\n\n# Generate the plot for the prior of the effects of independent variables\nPrior_betas &lt;- ggplot( ) +\n  stat_function(\n    fun = dnorm,    # We use the normal distribution\n    args = list(mean = 0, sd = 10), # \n    xlim = c(-20,20)\n  ) +\n  scale_y_continuous(name = \"density\") +\n  labs(title = \"Prior for the effects of independent variables\",\n       subtitle = \"N(0,10)\")\n\nPrior_mu + Prior_sigma + Prior_betas +\n  plot_layout(ncol = 3)\n\n\n\n\nProbability density plots for the different priors used in the example model"
   },
   {
     "objectID": "Presentations/Part2/Slides_Part2.html#understanding-priors-another-example",
@@ -1164,7 +1164,7 @@
     "href": "Presentations/Part2/Slides_Part2.html#understanding-priors-another-example-3",
     "title": "Applied Bayesian Analyses in R",
     "section": "Understanding priors… another example",
-    "text": "Understanding priors… another example\n\nAssuming a small effect of experimental conditions\nNo difference between both experimental conditions\n\n\nRemember Cohen’s d: 0.2 = small effect size; 0.5 = medium effect size; 0.8 or higher = large effect size"
+    "text": "Understanding priors… another example\n\nAssuming a small effect of experimental conditions\nNo difference between both experimental conditions\n\n\n\n\n\n\n\n\n\n\nRemember Cohen’s d: 0.2 = small effect size; 0.5 = medium effect size; 0.8 or higher = large effect size"
   },
   {
     "objectID": "Presentations/Part2/Slides_Part2.html#setting-custom-priors-in-brms",
@@ -1213,14 +1213,14 @@
     "href": "Presentations/Part2/Slides_Part2.html#does-the-trace-plot-exhibits-convergence",
     "title": "Applied Bayesian Analyses in R",
     "section": "Does the trace-plot exhibits convergence?",
-    "text": "Does the trace-plot exhibits convergence?\n\nCreate custom trace-plots (aka caterpillar plots) with ggs( ) function from ggmcmc package\n\nModel_chains &lt;- ggs(MarathonTimes_Mod2)\n\nModel_chains %&gt;%\n  filter(Parameter %in% c(\n          \"b_Intercept\", \n          \"b_km4week\", \n          \"b_sp4week\", \n          \"sigma\"\n          )\n  ) %&gt;%\n  ggplot(aes(\n    x   = Iteration,\n    y   = value, \n    col = as.factor(Chain)))+\n  geom_line() +\n  facet_grid(Parameter ~ .,\n             scale  = 'free_y',\n             switch = 'y') +\n  labs(title = \"Caterpillar Plots for the parameters\",\n       col   = \"Chains\")"
+    "text": "Does the trace-plot exhibits convergence?\n\nCreate custom trace-plots (aka caterpillar plots) with ggs( ) function from ggmcmc package\n\nModel_chains &lt;- ggs(MarathonTimes_Mod2)\n\nModel_chains %&gt;%\n  filter(Parameter %in% c(\n          \"b_Intercept\", \n          \"b_km4week\", \n          \"b_sp4week\", \n          \"sigma\"\n          )\n  ) %&gt;%\n  ggplot(aes(\n    x   = Iteration,\n    y   = value, \n    col = as.factor(Chain)))+\n  geom_line() +\n  facet_grid(Parameter ~ .,\n             scale  = 'free_y',\n             switch = 'y') +\n  labs(title = \"Caterpillar Plots for the parameters\",\n       col   = \"Chains\")\n\n\n\n\nCaterpillar plots for the parameters in the model"
   },
   {
     "objectID": "Presentations/Part2/Slides_Part2.html#does-convergence-remain-after-doubling-the-number-of-iterations",
     "href": "Presentations/Part2/Slides_Part2.html#does-convergence-remain-after-doubling-the-number-of-iterations",
     "title": "Applied Bayesian Analyses in R",
     "section": "Does convergence remain after doubling the number of iterations?",
-    "text": "Does convergence remain after doubling the number of iterations?\n\nRe-fit the model with more iterations\n\nCheck trace-plots again\n\n\n\n\n\n\n\nWarning\n\n\nFirst consider the need to do this! If you have a complex model that already took a long time to run, this check will take at least twice as much time…"
+    "text": "Does convergence remain after doubling the number of iterations?\n\nRe-fit the model with more iterations\n\nCheck trace-plots again\n\n\n\n\n\n\n\nWarning\n\n\n\nFirst consider the need to do this! If you have a complex model that already took a long time to run, this check will take at least twice as much time…"
   },
   {
     "objectID": "Presentations/Part2/Slides_Part2.html#your-turn-2",
@@ -1367,7 +1367,7 @@
     "href": "Presentations/Part2/Slides_Part2.html#basic-table-with-indices",
     "title": "Applied Bayesian Analyses in R",
     "section": "Basic table with indices",
-    "text": "Basic table with indices\nFirst check is done by using the powerscale_sensitivity( ) function\n\ncolumn prior contains info on sensibility for prior (should be lower than 0.05)\ncolumn likelihood contains info on sensibility for likelihood (that we want to be high, ‘let our data speak’)\ncolumn diagnosis is a verbalization of potential problem (- if none)\n\n\npowerscale_sensitivity(MarathonTimes_Mod2)"
+    "text": "Basic table with indices\nFirst check is done by using the powerscale_sensitivity( ) function\n\ncolumn prior contains info on sensibility for prior (should be lower than 0.05)\ncolumn likelihood contains info on sensibility for likelihood (that we want to be high, ‘let our data speak’)\ncolumn diagnosis is a verbalization of potential problem (- if none)\n\n\npowerscale_sensitivity(MarathonTimes_Mod2)\n\nSensitivity based on cjs_dist:\n# A tibble: 4 × 4\n  variable       prior likelihood diagnosis\n  &lt;chr&gt;          &lt;dbl&gt;      &lt;dbl&gt; &lt;chr&gt;    \n1 b_Intercept 0.000853     0.0851 -        \n2 b_km4week   0.000512     0.0802 -        \n3 b_sp4week   0.000370     0.0831 -        \n4 sigma       0.00571      0.151  -"
   },
   {
     "objectID": "Presentations/Part2/Slides_Part2.html#visualization-of-prior-sensibility",
