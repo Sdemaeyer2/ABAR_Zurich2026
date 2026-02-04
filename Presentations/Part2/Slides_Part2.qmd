@@ -498,14 +498,6 @@ pp_check(Fit_Model_priors,
          stat = "median")
 ```
 
-## `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099" transition="slide-in"}
-
--   Your data and model
-
--   Perform a prior predictive check
-
--   If necessary re-think your priors and check again
-
 # Focus on convergence of the model (before interpreting the model!)
 
 ## Does the trace-plot exhibits convergence?
@@ -559,11 +551,6 @@ Check trace-plots again
 First consider the need to do this! If you have a complex model that already took a long time to run, this check will take at least twice as much time...
 :::
 
-## `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099" transition="slide-in"}
-
--   Your data and model
--   Do the first checks on the model convergence
-
 ## R-hat statistics
 
 Sampling of parameters done by:
@@ -608,11 +595,6 @@ mcmc_rhat(
   yaxis_text(hjust = 1)  # to print parameter names
 ```
 
-## `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099" transition="slide-in"}
-
--   Your data and model
-
--   Check the R-hat statistics
 
 ## Autocorrelation
 
@@ -654,12 +636,6 @@ mcmc_acf(
   regex = "b") # to plot only the parameters starting with b (our beta's)
 ```
 
-## `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099" transition="slide-in"}
-
--   Your data and model
-
--   Check the autocorrelation
-
 ## Rank order plots
 
 -   additional way to assess the convergence of MCMC
@@ -675,12 +651,6 @@ mcmc_rank_hist(
   regex = "b" # only intercept and beta's
   ) 
 ```
-
-## `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099" transition="slide-in"}
-
--   Your data and model
-
--   Check the rank order plots
 
 # Focus on the Posterior
 
@@ -781,12 +751,6 @@ pp_check(MarathonTimes_Mod2,
          stat = "median")
 ```
 
-## `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099" transition="slide-in"}
-
--   Your data and model
-
--   Focus on the posterior and do some checks!
-
 # Prior sensibility analyses
 
 ## Why prior sensibility analyses?
@@ -856,28 +820,3 @@ powerscale_plot_dens(
     )
   )
 ```
-
-## Visualization of prior sensibility
-
-```{r}
-#| echo: true
-#| warning: false
-#| message: false
-#| cache: true
-#| output-location: slide
-
-powerscale_plot_quantities(
-  powerscale_sequence(
-    MarathonTimes_Mod2
-    ),
-  variable = c(
-      "b_km4week"
-      )
-  )
-```
-
-## `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099" transition="slide-in"}
-
--   Your data and model
-
--   Check the prior sensibility of your results
