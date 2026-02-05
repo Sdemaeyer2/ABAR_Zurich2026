@@ -425,5 +425,425 @@
     "title": "Applied Bayesian Analyses in R",
     "section": " Your Turn",
     "text": "Your Turn\n\nYour data and model\nCheck the prior sensibility of your results"
+  },
+  {
+    "objectID": "Presentations/Part3/Slides_Part3.html#new-example-data-writingdata.rdata",
+    "href": "Presentations/Part3/Slides_Part3.html#new-example-data-writingdata.rdata",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "New example data WritingData.RData",
+    "text": "New example data WritingData.RData\n\nExperimental study on Writing instructions\n2 conditions:\n\nControl condition (Business as usual)\nExperimental condition (Observational learning)"
+  },
+  {
+    "objectID": "Presentations/Part3/Slides_Part3.html#your-turn",
+    "href": "Presentations/Part3/Slides_Part3.html#your-turn",
+    "title": "Applied Bayesian Analyses in R",
+    "section": " Your Turn",
+    "text": "Your Turn\n\nOpen WritingData.RData\nEstimate 3 models with SecondVersion as dependent variable\n\nM1: fixed effect of FirstVersion_GM + random effect of Class ((1|Class))\nM2: M1 + random effect of FirstVersion_GM ((1 + FirstVersion_GM |Class))\nM3: M2 + fixed effect of Experimental_condition\n\nCompare the models on their fit\nWhat do we learn?\nMake a summary of the best fitting model\n\n\n\nNote: FirstVersion_GMis the score of the pretest centred around the mean, so a score 0 for this variable implies scoring on average for the pretest"
+  },
+  {
+    "objectID": "Presentations/Part3/Slides_Part3.html#divergent-transitions",
+    "href": "Presentations/Part3/Slides_Part3.html#divergent-transitions",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Divergent transitions…",
+    "text": "Divergent transitions…\n\nExploring the parameter space…"
+  },
+  {
+    "objectID": "Presentations/Part3/Slides_Part3.html#divergent-transitions-1",
+    "href": "Presentations/Part3/Slides_Part3.html#divergent-transitions-1",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Divergent transitions…",
+    "text": "Divergent transitions…\n\nSomething to worry about!\nEssentially: sampling of parameter estimate values went wrong\nFixes:\n\nsometimes fine-tuning the sampling algorithm (e.g., control = list(adapt_delta = 0.9)) works\nsometimes you need more informative priors\nsometimes the model is just not a good model"
+  },
+  {
+    "objectID": "Presentations/Part3/Slides_Part3.html#our-fix-here-for-model-3",
+    "href": "Presentations/Part3/Slides_Part3.html#our-fix-here-for-model-3",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Our fix here for model 3",
+    "text": "Our fix here for model 3\n\nM3 &lt;- brm(\n  SecondVersion ~ FirstVersion_GM + Experimental_condition + (1 + FirstVersion_GM |Class),\n  data = WritingData,\n  backend = \"cmdstanr\",\n  cores = 4,\n  control = list(adapt_delta = 0.9),\n  seed = 1975 \n)"
+  },
+  {
+    "objectID": "Presentations/Part3/Slides_Part3.html#our-fix-here-for-model-3-1",
+    "href": "Presentations/Part3/Slides_Part3.html#our-fix-here-for-model-3-1",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Our fix here for model 3",
+    "text": "Our fix here for model 3"
+  },
+  {
+    "objectID": "Presentations/Part3/Slides_Part3.html#interpretation-of-results",
+    "href": "Presentations/Part3/Slides_Part3.html#interpretation-of-results",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Interpretation of results…",
+    "text": "Interpretation of results…\nDifferent ways to summarize our results:\n\nvisually\ncredible intervals (eti & hdi)\nrope + hdi rule\nhypothesis tests"
+  },
+  {
+    "objectID": "Presentations/Part3/Slides_Part3.html#functions-in-bayesplot-package",
+    "href": "Presentations/Part3/Slides_Part3.html#functions-in-bayesplot-package",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Functions in bayesplot package",
+    "text": "Functions in bayesplot package\n\nmcmc_areas() function\nmcmc_areas_ridges() function\nmcmc_intervals() function"
+  },
+  {
+    "objectID": "Presentations/Part3/Slides_Part3.html#the-mcmc_areas-function",
+    "href": "Presentations/Part3/Slides_Part3.html#the-mcmc_areas-function",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "The mcmc_areas() function",
+    "text": "The mcmc_areas() function\nGives a posterior distribution including a certain credible interval that you can set manually with the prob argument:\n\nmcmc_areas(\n  M3,\n  pars = c(\n    \"b_FirstVersion_GM\",\n    \"b_Experimental_condition\"\n  ),\n  prob = .89\n)"
+  },
+  {
+    "objectID": "Presentations/Part3/Slides_Part3.html#the-mcmc_areas-function-output",
+    "href": "Presentations/Part3/Slides_Part3.html#the-mcmc_areas-function-output",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "The mcmc_areas() function",
+    "text": "The mcmc_areas() function"
+  },
+  {
+    "objectID": "Presentations/Part3/Slides_Part3.html#the-mcmc_areas_ridges-function",
+    "href": "Presentations/Part3/Slides_Part3.html#the-mcmc_areas_ridges-function",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "The mcmc_areas_ridges() function",
+    "text": "The mcmc_areas_ridges() function\n\nAlmost similar to the previous, only the horizontal spacing changes a bit…\n\nMeanwhile, see how you can easily change the color scheme for bayesplot graphs\n\n\ncolor_scheme_set(scheme = \"red\")\n\nmcmc_areas_ridges(\n  M3,\n  pars = c(\n    \"b_FirstVersion_GM\",\n    \"b_Experimental_condition\"\n  ),\n  prob = .89\n)"
+  },
+  {
+    "objectID": "Presentations/Part3/Slides_Part3.html#the-mcmc_areas_ridges-function-output",
+    "href": "Presentations/Part3/Slides_Part3.html#the-mcmc_areas_ridges-function-output",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "The mcmc_areas_ridges() function",
+    "text": "The mcmc_areas_ridges() function"
+  },
+  {
+    "objectID": "Presentations/Part3/Slides_Part3.html#the-mcmc_intervals-function",
+    "href": "Presentations/Part3/Slides_Part3.html#the-mcmc_intervals-function",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "The mcmc_intervals() function",
+    "text": "The mcmc_intervals() function\nSummarizes the posterior as a horizontal bar with identifiers for two CI.\nHere we set one for a 50% and one for a 89% CI\n\ncolor_scheme_set(scheme = \"gray\")\n\nmcmc_intervals(\n  M3,\n  pars = c(\n    \"b_FirstVersion_GM\",\n    \"b_Experimental_condition\"\n  ),\n  prob = .5,\n  prob_outer = .89\n)"
+  },
+  {
+    "objectID": "Presentations/Part3/Slides_Part3.html#the-mcmc_intervals-function-output",
+    "href": "Presentations/Part3/Slides_Part3.html#the-mcmc_intervals-function-output",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "The mcmc_intervals() function",
+    "text": "The mcmc_intervals() function"
+  },
+  {
+    "objectID": "Presentations/Part3/Slides_Part3.html#manually-create-visualizations",
+    "href": "Presentations/Part3/Slides_Part3.html#manually-create-visualizations",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Manually create visualizations",
+    "text": "Manually create visualizations\n\nPowercombo: as_draws_df() + ggplot2 + ggdist\n\nWhat does as_draws_df() do?\n\n\nposterior_PD &lt;- as_draws_df(M3)\nhead(posterior_PD)"
+  },
+  {
+    "objectID": "Presentations/Part3/Slides_Part3.html#manually-create-visualizations-output",
+    "href": "Presentations/Part3/Slides_Part3.html#manually-create-visualizations-output",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Manually create visualizations",
+    "text": "Manually create visualizations\n\n# A draws_df: 6 iterations, 1 chains, and 49 variables\n  b_Intercept b_FirstVersion_GM b_Experimental_condition sd_Class__Intercept\n1         113              0.98                      4.7                 5.2\n2         112              1.47                      5.1                 2.8\n3         113              1.07                      3.5                 2.8\n4         111              1.09                      4.7                 4.2\n5         112              1.08                      4.0                 1.7\n6         111              1.04                      5.0                 2.4\n  sd_Class__FirstVersion_GM cor_Class__Intercept__FirstVersion_GM sigma\n1                      0.93                                  0.77   7.4\n2                      1.06                                  0.68   8.1\n3                      0.88                                  0.79   7.1\n4                      0.75                                  0.74   8.0\n5                      0.94                                  0.78   7.1\n6                      0.97                                  0.82   8.1\n  r_Class[1,Intercept]\n1                 1.84\n2                -1.59\n3                -0.60\n4                 0.95\n5                 0.81\n6                 0.38\n# ... with 41 more variables\n# ... hidden reserved variables {'.chain', '.iteration', '.draw'}"
+  },
+  {
+    "objectID": "Presentations/Part3/Slides_Part3.html#use-draws-to-create-a-plot-using-ggdist-geoms",
+    "href": "Presentations/Part3/Slides_Part3.html#use-draws-to-create-a-plot-using-ggdist-geoms",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Use draws to create a plot using ggdist geoms",
+    "text": "Use draws to create a plot using ggdist geoms\n\n\n\n\n\n\n\n\n\n\n\n\nggdist package has a set of functions to visualize a distribution"
+  },
+  {
+    "objectID": "Presentations/Part3/Slides_Part3.html#an-example",
+    "href": "Presentations/Part3/Slides_Part3.html#an-example",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "An example",
+    "text": "An example\n\nBefore we start, set our own plot theme (not so necessary)\n\n\n# Setting a plotting theme\ntheme_set(theme_linedraw() +\n            theme(\n              text = element_text(family = \"Times\", size = 14),\n              panel.grid = element_blank()\n              )\n)"
+  },
+  {
+    "objectID": "Presentations/Part3/Slides_Part3.html#an-example-1",
+    "href": "Presentations/Part3/Slides_Part3.html#an-example-1",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "An example",
+    "text": "An example\n\nWe use posterior_PD as a starting point (our draws)\n\nlibrary(ggdist)\n\nPlot &lt;- ggplot(\n  posterior_PD,\n  aes(x = b_Experimental_condition)\n  ) +\n  stat_halfeye()\n\nPlot + scale_y_continuous(name = \"\", breaks = NULL)"
+  },
+  {
+    "objectID": "Presentations/Part3/Slides_Part3.html#an-example-1-output",
+    "href": "Presentations/Part3/Slides_Part3.html#an-example-1-output",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "An example",
+    "text": "An example"
+  },
+  {
+    "objectID": "Presentations/Part3/Slides_Part3.html#change-the-cis",
+    "href": "Presentations/Part3/Slides_Part3.html#change-the-cis",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Change the CI’s",
+    "text": "Change the CI’s\n\nChange the CI’s to 50% and 89%\n\n\nPlot &lt;- ggplot(\n  posterior_PD,\n  aes(x = b_Experimental_condition)\n  ) +\n  stat_halfeye(\n    .width = c(.50,.89)\n  )\n\nPlot + scale_y_continuous(name = \"\", breaks = NULL)"
+  },
+  {
+    "objectID": "Presentations/Part3/Slides_Part3.html#change-the-cis-output",
+    "href": "Presentations/Part3/Slides_Part3.html#change-the-cis-output",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Change the CI’s",
+    "text": "Change the CI’s"
+  },
+  {
+    "objectID": "Presentations/Part3/Slides_Part3.html#use-another-visualization",
+    "href": "Presentations/Part3/Slides_Part3.html#use-another-visualization",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Use another visualization",
+    "text": "Use another visualization\n\nLet’s make a dotplot… (research shows this is best interpreted) with 100 dots\n\n\nPlot &lt;- ggplot(\n  posterior_PD,\n  aes(x = b_Experimental_condition)\n  ) +\n  stat_dotsinterval(\n    quantiles = 100,\n    .width = c(.50,.89)\n  )\n\nPlot + scale_y_continuous(name = \"\", breaks = NULL)"
+  },
+  {
+    "objectID": "Presentations/Part3/Slides_Part3.html#use-another-visualization-output",
+    "href": "Presentations/Part3/Slides_Part3.html#use-another-visualization-output",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Use another visualization",
+    "text": "Use another visualization"
+  },
+  {
+    "objectID": "Presentations/Part3/Slides_Part3.html#plot-two-parameters-each-in-a-facet",
+    "href": "Presentations/Part3/Slides_Part3.html#plot-two-parameters-each-in-a-facet",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Plot two parameters each in a facet",
+    "text": "Plot two parameters each in a facet\n\nWe use pivot_longer(everything()) to stack information on multiple parameters\n\n\nposterior_PD %&gt;% \n  select(\n    b_Experimental_condition, b_FirstVersion_GM\n  ) %&gt;% \n  pivot_longer(everything()) %&gt;%\n  ggplot(\n    aes(x = value)\n  ) +\n  stat_halfeye(\n    .width = c(.50,.89)\n  ) +\nfacet_wrap(name ~ .) +\nscale_y_continuous(name = \"\", breaks = NULL)"
+  },
+  {
+    "objectID": "Presentations/Part3/Slides_Part3.html#plot-two-parameters-each-in-a-facet-output",
+    "href": "Presentations/Part3/Slides_Part3.html#plot-two-parameters-each-in-a-facet-output",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Plot two parameters each in a facet",
+    "text": "Plot two parameters each in a facet"
+  },
+  {
+    "objectID": "Presentations/Part3/Slides_Part3.html#visualize-calculated-predictions-based-on-posterior",
+    "href": "Presentations/Part3/Slides_Part3.html#visualize-calculated-predictions-based-on-posterior",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Visualize calculated predictions based on posterior",
+    "text": "Visualize calculated predictions based on posterior\nOur example: 2 groups according to Experimental_condition\nHow to visualize the posterior probability of averages for both groups?\n\nposterior_PD %&gt;% \n  select(\n    b_Intercept, b_Experimental_condition\n  ) %&gt;% \n  mutate(\n    Mean_Control_condition = b_Intercept,\n    Mean_Experimental_condition = b_Intercept + b_Experimental_condition\n  ) %&gt;% \n  select(\n    Mean_Control_condition, Mean_Experimental_condition\n  ) %&gt;% \n  pivot_longer(everything()) %&gt;%\n  ggplot(\n    aes(x = value, color = name, fill = name)\n  ) +\n  stat_halfeye(\n    .width = c(.50,.89),\n    alpha = .40\n  ) + \n  scale_y_continuous(name = \"\", breaks = NULL)"
+  },
+  {
+    "objectID": "Presentations/Part3/Slides_Part3.html#visualize-calculated-predictions-based-on-posterior-output",
+    "href": "Presentations/Part3/Slides_Part3.html#visualize-calculated-predictions-based-on-posterior-output",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Visualize calculated predictions based on posterior",
+    "text": "Visualize calculated predictions based on posterior"
+  },
+  {
+    "objectID": "Presentations/Part3/Slides_Part3.html#hypothetical-outcome-plots-hops",
+    "href": "Presentations/Part3/Slides_Part3.html#hypothetical-outcome-plots-hops",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Hypothetical Outcome Plots (HOPs)",
+    "text": "Hypothetical Outcome Plots (HOPs)\nCode: see separate script called HOP_script.R\n\n\n# A tibble: 6 × 3\n   draw     X Pred1\n  &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt;\n1     1 -15    95.8\n2     1 -14.9  95.9\n3     1 -14.8  96.0\n4     1 -14.7  96.1\n5     1 -14.6  96.2\n6     1 -14.5  96.3"
+  },
+  {
+    "objectID": "Presentations/Part3/Slides_Part3.html#plotting-the-residuals",
+    "href": "Presentations/Part3/Slides_Part3.html#plotting-the-residuals",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Plotting the residuals",
+    "text": "Plotting the residuals\nTo plot differences between classes we can use class-specific residuals:\n\nhead(as_draws_df(M3) %&gt;% \n  select(ends_with(\",Intercept]\")) %&gt;%\n  select(1:3),\n  5\n)\n\n# A tibble: 5 × 3\n  `r_Class[1,Intercept]` `r_Class[2,Intercept]` `r_Class[3,Intercept]`\n                   &lt;dbl&gt;                  &lt;dbl&gt;                  &lt;dbl&gt;\n1                  1.84                  1.36                  -4.38  \n2                 -1.59                  3.12                   0.0290\n3                 -0.595                 2.02                  -0.347 \n4                  0.945                 2.50                  -2.55  \n5                  0.815                -0.0404                -1.59"
+  },
+  {
+    "objectID": "Presentations/Part3/Slides_Part3.html#plotting-the-residuals-1",
+    "href": "Presentations/Part3/Slides_Part3.html#plotting-the-residuals-1",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Plotting the residuals",
+    "text": "Plotting the residuals\n\nas_draws_df(M3) %&gt;% \n  select(ends_with(\",Intercept]\")) %&gt;%\n  pivot_longer(starts_with(\"r_Class\")) %&gt;% \n  mutate(sigma_i = value) %&gt;%\n  ggplot(aes(x = sigma_i, y = reorder(name, sigma_i))) +\n  stat_pointinterval(\n    point_interval = mean_qi, \n    .width = .89, \n    size = 1/6) +\n  scale_y_discrete(expression(italic(j)), breaks = NULL) +\n  labs(x = expression(italic(u)[italic(j)])) +\n  coord_flip()"
+  },
+  {
+    "objectID": "Presentations/Part3/Slides_Part3.html#plotting-the-residuals-1-output",
+    "href": "Presentations/Part3/Slides_Part3.html#plotting-the-residuals-1-output",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Plotting the residuals",
+    "text": "Plotting the residuals"
+  },
+  {
+    "objectID": "Presentations/Part3/Slides_Part3.html#icc-estimation",
+    "href": "Presentations/Part3/Slides_Part3.html#icc-estimation",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "ICC estimation",
+    "text": "ICC estimation\n\nhead(\n  as_draws_df(M3) %&gt;%\n    mutate(\n      ICC = (sd_Class__Intercept^2/(sd_Class__Intercept^2 + sigma^2))) %&gt;%\n    select(sigma, sd_Class__Intercept, ICC), \n  5\n  ) \n\n# A tibble: 5 × 3\n  sigma sd_Class__Intercept    ICC\n  &lt;dbl&gt;               &lt;dbl&gt;  &lt;dbl&gt;\n1  7.36                5.24 0.336 \n2  8.07                2.77 0.106 \n3  7.10                2.76 0.131 \n4  8.01                4.18 0.214 \n5  7.11                1.71 0.0545"
+  },
+  {
+    "objectID": "Presentations/Part3/Slides_Part3.html#icc-estimation-1",
+    "href": "Presentations/Part3/Slides_Part3.html#icc-estimation-1",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "ICC estimation",
+    "text": "ICC estimation\n\nas_draws_df(M3) %&gt;%\n  mutate(\n    ICC = (sd_Class__Intercept^2/(sd_Class__Intercept^2 + sigma^2))\n    ) %&gt;%\n  select(ICC) %&gt;%                           \n  ggplot(aes(x = ICC)) +                    \n   stat_dotsinterval(\n     quantiles = 100,\n     .width = c(.50,.89)\n   ) +\n   scale_x_continuous(\"marginal posterior\", \n                      breaks = seq(.00,.60,by =.05)) + \n   scale_y_continuous(\"ICC\", breaks = NULL)"
+  },
+  {
+    "objectID": "Presentations/Part3/Slides_Part3.html#icc-estimation-1-output",
+    "href": "Presentations/Part3/Slides_Part3.html#icc-estimation-1-output",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "ICC estimation",
+    "text": "ICC estimation"
+  },
+  {
+    "objectID": "Presentations/Part3/Slides_Part3.html#hop-per-higher-level-unit",
+    "href": "Presentations/Part3/Slides_Part3.html#hop-per-higher-level-unit",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "HOP per higher level unit",
+    "text": "HOP per higher level unit\nCode: see separate script called HOP_MixedEffects_script.R"
+  },
+  {
+    "objectID": "Presentations/Part3/Slides_Part3.html#credible-intervals",
+    "href": "Presentations/Part3/Slides_Part3.html#credible-intervals",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Credible Intervals",
+    "text": "Credible Intervals\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nETI: Equal Tailed Interval\n\n\n\nHDI: Highest Density Interval"
+  },
+  {
+    "objectID": "Presentations/Part3/Slides_Part3.html#concept-of-rope",
+    "href": "Presentations/Part3/Slides_Part3.html#concept-of-rope",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Concept of ROPE",
+    "text": "Concept of ROPE\n\n\n\n\n\n\n\n\n\n\n\n\nROPE: Region Of Practical Equivalence\n Set a region of parameter values that can be considered equivalent to having no effect \n\nin standard effect sizes the advised default is a range of -0.1 to 0.1\nthis equals 1/2 of a small effect size (Cohen, 1988)\nall parameter values in that range are set equal to no effect"
+  },
+  {
+    "objectID": "Presentations/Part3/Slides_Part3.html#rope-hdi",
+    "href": "Presentations/Part3/Slides_Part3.html#rope-hdi",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "ROPE + HDI",
+    "text": "ROPE + HDI\n\n\n\n\n\n\n\n\n\n\n\n\nROPE + HDI rule\n\n\n95% of HDI out of ROPE \\(\\rightarrow\\) \\(H_0\\) rejected\n95% of HDI all in ROPE \\(\\rightarrow\\) \\(H_0\\) not rejected\n95% of HDI partially out of ROPE \\(\\rightarrow\\) undecided"
+  },
+  {
+    "objectID": "Presentations/Part3/Slides_Part3.html#applying-the-hdi-rope-rule-with-bayestestr-package",
+    "href": "Presentations/Part3/Slides_Part3.html#applying-the-hdi-rope-rule-with-bayestestr-package",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Applying the HDI + ROPE rule with bayestestR package",
+    "text": "Applying the HDI + ROPE rule with bayestestR package\n\nWe can use the equivalence_test() function of the bayestestR package\n\n\nlibrary(bayestestR)\nequivalence_test(M3)\n\n# Test for Practical Equivalence\n\n  ROPE: [-1.68 1.68]\n\nParameter              |       H0 | inside ROPE |          95% HDI\n------------------------------------------------------------------\nIntercept              | Rejected |      0.00 % | [109.18, 113.43]\nFirstVersion_GM        | Accepted |    100.00 % |     [0.48, 1.39]\nExperimental_condition | Rejected |      0.00 % |     [1.71, 7.47]"
+  },
+  {
+    "objectID": "Presentations/Part3/Slides_Part3.html#visualizing-the-hdi-rope-rule",
+    "href": "Presentations/Part3/Slides_Part3.html#visualizing-the-hdi-rope-rule",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Visualizing the HDI + ROPE rule",
+    "text": "Visualizing the HDI + ROPE rule\n\nWe visualize the equivalence_test() by adding plot( )\n\n\n\nequivalence_test(M3) %&gt;%\n  plot()"
+  },
+  {
+    "objectID": "Presentations/Part3/Slides_Part3.html#probability-of-direction-pd-with-parameters-package",
+    "href": "Presentations/Part3/Slides_Part3.html#probability-of-direction-pd-with-parameters-package",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Probability of Direction (PD) with parameters package",
+    "text": "Probability of Direction (PD) with parameters package\n\nlibrary(parameters)\nmodel_parameters(\n  M3,\n  ci_method = \"hdi\",\n  rope_range = c(-1.8,1.8), #sd MarathonTimeM = 17.76 so 17.76*0.1 \n  test = c(\"rope\", \"pd\")\n  )\n\n# Fixed Effects\n\nParameter              | Median |           95% CI |     pd | % in ROPE |  Rhat |     ESS\n-----------------------------------------------------------------------------------------\n(Intercept)            | 111.36 | [109.34, 113.58] |   100% |        0% | 1.000 | 1925.00\nFirstVersion_GM        |   0.94 | [  0.49,   1.40] | 99.98% |      100% | 1.001 | 1718.00\nExperimental_condition |   4.54 | [  1.77,   7.52] | 99.75% |     0.21% | 0.999 | 1814.00\n\n# Sigma\n\nParameter | Median |       95% CI |   pd | % in ROPE |  Rhat |     ESS\n----------------------------------------------------------------------\nsigma     |   7.68 | [7.19, 8.20] | 100% |        0% | 1.001 | 5235.00"
+  },
+  {
+    "objectID": "Presentations/Part3/Slides_Part3.html#some-books",
+    "href": "Presentations/Part3/Slides_Part3.html#some-books",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Some books ",
+    "text": "Some books"
+  },
+  {
+    "objectID": "Presentations/Part3/Slides_Part3.html#some-books-1",
+    "href": "Presentations/Part3/Slides_Part3.html#some-books-1",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Some books ",
+    "text": "Some books"
+  },
+  {
+    "objectID": "Presentations/Part3/Slides_Part3.html#some-free-online-books",
+    "href": "Presentations/Part3/Slides_Part3.html#some-free-online-books",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Some free online books ",
+    "text": "Some free online books \n\nBayes Rules!:\n\nhttps://www.bayesrulesbook.com/\n\nOr this book:\n\nhttps://vasishth.github.io/bayescogsci/book/"
+  },
+  {
+    "objectID": "Presentations/Part3/Slides_Part3.html#rens-van-de-schoot",
+    "href": "Presentations/Part3/Slides_Part3.html#rens-van-de-schoot",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Rens van de Schoot ",
+    "text": "Rens van de Schoot \nIn Nature Reviews"
+  },
+  {
+    "objectID": "Presentations/Part3/Slides_Part3.html#the-podcast",
+    "href": "Presentations/Part3/Slides_Part3.html#the-podcast",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "THE Podcast ",
+    "text": "THE Podcast \nIf you like running - like I do - this could be a great companion on your run!\nhttps://www.learnbayesstats.com/"
+  },
+  {
+    "objectID": "Presentations/Part3/Slides_Part3.html#site-on-creating-the-graphs",
+    "href": "Presentations/Part3/Slides_Part3.html#site-on-creating-the-graphs",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Site on creating the graphs ",
+    "text": "Site on creating the graphs \nThere are many blogs and websites that you can consult if you want to find out more about making graphs. \nOne that I often fall back to is:\n\nhttp://mjskay.github.io/tidybayes/"
+  },
+  {
+    "objectID": "Presentations/Part3/Slides_Part3.html#questions",
+    "href": "Presentations/Part3/Slides_Part3.html#questions",
+    "title": "Applied Bayesian Analyses in R",
+    "section": "Questions?",
+    "text": "Questions?\n\nDo not hesitate to contact me!\n\nsven.demaeyer@uantwerpen.be"
+  },
+  {
+    "objectID": "Integrated_exercise/Exercise.html",
+    "href": "Integrated_exercise/Exercise.html",
+    "title": "Integrated excercise",
+    "section": "",
+    "text": "This dataset is a simulated dataset that is based on an existing study of Frumuselu et al. (2015). In this study, the key question was whether subtitles help in foreign language acquisition. Spanish students (n = 36) watched episodes of the popular tv-show “Friends” for half an hour each week, during 26 weeks. The students were assigned to 3 conditions:\n\nEnglish subtitled (condition “FL”)\nSpanish subtitled (condition “MT”)\nNo subtitles (condition “NoSub”)\n\nAt 3 occasions students got a Fluency test:\n\nBefore the 26 weeks started\nAfter 12 weeks\nAfter the experiment\n\nThe dependent variable is a measure based on the number of words used in a scripted spontaneous interview with a test taker. The data is structured as follows:\n\n\nCode\nload(file = \"Subtitles.RData\")\nhead(Subtitles, 9)\n\n\n  student occasion condition fluency\n1       1     Occ1        FL  101.25\n2       1     Occ2        FL  103.76\n3       1     Occ3        FL  117.39\n4       2     Occ1        MT   98.79\n5       2     Occ2        MT  106.75\n6       2     Occ3        MT  110.54\n7       3     Occ1     NoSub  104.83\n8       3     Occ2     NoSub  102.04\n9       3     Occ3     NoSub  100.63\n\n\nIf we visualize the dataset we get a first impression of the effect of the condition. In this exercise it is your task to do the proper Bayesian modelling and interpretation.\n\n\nCode\nlibrary(tidyverse)\n\ntheme_set(theme_linedraw() +\n            theme(text = element_text(family = \"Times\", size = 10),\n                  panel.grid = element_blank())\n)\n\nSubtitles %&gt;%\n  ggplot(\n    aes(\n      x = occasion,\n      y = fluency,\n      group = student\n      )\n  ) +\n  geom_path(\n    aes(\n      color = condition\n    )\n  )"
+  },
+  {
+    "objectID": "Integrated_exercise/Exercise.html#subtask-2.1-what-about-the-priors",
+    "href": "Integrated_exercise/Exercise.html#subtask-2.1-what-about-the-priors",
+    "title": "Integrated excercise",
+    "section": "Subtask 2.1: what about the priors?",
+    "text": "Subtask 2.1: what about the priors?\nWhat are the default brms priors? Do they make sense? Do they generate impossible datasets? If necessary, specify your own (weakly informative) priors and approach them critically as well."
+  },
+  {
+    "objectID": "Integrated_exercise/Exercise.html#subtask-2.2-did-the-model-converge-properly",
+    "href": "Integrated_exercise/Exercise.html#subtask-2.2-did-the-model-converge-properly",
+    "title": "Integrated excercise",
+    "section": "Subtask 2.2: did the model converge properly?",
+    "text": "Subtask 2.2: did the model converge properly?\nPerform different checks on the convergence of the model."
+  },
+  {
+    "objectID": "Integrated_exercise/Exercise.html#subtask-2.3-does-the-posterior-distribution-histogram-have-enough-information",
+    "href": "Integrated_exercise/Exercise.html#subtask-2.3-does-the-posterior-distribution-histogram-have-enough-information",
+    "title": "Integrated excercise",
+    "section": "Subtask 2.3: does the posterior distribution histogram have enough information?",
+    "text": "Subtask 2.3: does the posterior distribution histogram have enough information?\nCheck if the posterior distribution histograms of the different parameters are informative enough to substantiate our inferences."
+  },
+  {
+    "objectID": "Integrated_exercise/Exercise.html#subtask-2.4-how-well-does-the-model-predict-the-observed-data",
+    "href": "Integrated_exercise/Exercise.html#subtask-2.4-how-well-does-the-model-predict-the-observed-data",
+    "title": "Integrated excercise",
+    "section": "Subtask 2.4: how well does the model predict the observed data?",
+    "text": "Subtask 2.4: how well does the model predict the observed data?\nPerform posterior predictive checks based on the model."
+  },
+  {
+    "objectID": "Integrated_exercise/Exercise.html#subtask-2.5-what-about-prior-sensitivity-of-the-results",
+    "href": "Integrated_exercise/Exercise.html#subtask-2.5-what-about-prior-sensitivity-of-the-results",
+    "title": "Integrated excercise",
+    "section": "Subtask 2.5: what about prior sensitivity of the results?",
+    "text": "Subtask 2.5: what about prior sensitivity of the results?\nFinally, we have to check if the results of our model are not too dependent on the priors we specified in the model."
+  },
+  {
+    "objectID": "Integrated_exercise/Exercise_response.html#subtask-2.1-what-about-the-priors",
+    "href": "Integrated_exercise/Exercise_response.html#subtask-2.1-what-about-the-priors",
+    "title": "Integrated excercise",
+    "section": "Subtask 2.1: what about the priors?",
+    "text": "Subtask 2.1: what about the priors?\nWhat are the default brms priors? Do they make sense? Do they generate impossible datasets? If necessary, specify your own (weakly informative) priors and approach them critically as well.\n\n Potential Solution \nLet’s start with a prior predictive check.\n\n\nCode\nM3_priors &lt;- brm(\n  fluency ~ 1 + Occ2*FL + Occ2*MT + Occ3*FL + Occ3*MT + (1|student),\n  data = Subtitles,\n  cores = 4,\n  backend = \"cmdstanr\",\n  seed = 1975,\n  sample_prior = \"only\"\n)\n\npp_check(M3_priors)\n\n\nAs you might notice, you will get an error message saying that sampling from the priors is not possible. This is due to the fact that brms by default uses flat priors which generates this error message.\nTo get the priors used by brms we use the get_prior() command.\n\n\nCode\nget_prior(\n  fluency ~ 1 + Occ2*FL + Occ2*MT + Occ3*FL + Occ3*MT + (1|student),\n  data = Subtitles\n)\n\n\n                    prior     class      coef   group resp dpar nlpar lb ub\n                   (flat)         b                                        \n                   (flat)         b        FL                              \n                   (flat)         b   FL:Occ3                              \n                   (flat)         b        MT                              \n                   (flat)         b   MT:Occ3                              \n                   (flat)         b      Occ2                              \n                   (flat)         b   Occ2:FL                              \n                   (flat)         b   Occ2:MT                              \n                   (flat)         b      Occ3                              \n student_t(3, 104.9, 6.1) Intercept                                        \n     student_t(3, 0, 6.1)        sd                                    0   \n     student_t(3, 0, 6.1)        sd           student                  0   \n     student_t(3, 0, 6.1)        sd Intercept student                  0   \n     student_t(3, 0, 6.1)     sigma                                    0   \n       source\n      default\n (vectorized)\n (vectorized)\n (vectorized)\n (vectorized)\n (vectorized)\n (vectorized)\n (vectorized)\n (vectorized)\n      default\n      default\n (vectorized)\n (vectorized)\n      default\n\n\nAs can be seen above, for all the beta’s (fixed effects) brms uses a flat prior. Actually, that is something that is better avoided. More appropriate would be to come up with our own priors. Let’s think about this. All the explanatory variables are dummy variables. So, they quantify differences between groups of observations (based on time or condition).\nAs we have no prior idea about the directions of the effects of condition nor of the effect of time, we could use a prior distribution centred around 0 (most probability assigned to no effect).\nNext, we have to think about setting the width of the prior. For instance, if we use a normal distribution to express our prior belief, we have to think about the sd for the normal distribution that captures our prior belief. In our case, the sd has to be high enough to assign some probability to very strong positive effects as well as to very strong negative effects. Here, it is important that we know our data well. I mean, we need to know the scale of our dependent variable (fluency). This variable has a standard deviation of 7.1. Now we can use Effect Sizes as a frame of reference to determine what a large positive and negative effect implies on the scale of the fluency variable. Remember, an effect size of 0.8 (or higher) indicates a strong effect (this is based on the Cohen’s d rules of thumb). So, on our scale of the fluency variable an effect of 5.7 (= 7.1 * 0.8) indicates a strong effect. If we use the value 5.7 as our sd for priors for the effects of our dummy variables, this would imply that we think that the 95% most probable parameter values for the effect of the dummy variables would be situated between -11.4 (= -2 * 5.7) and 11.4 (= 2 * 5.7). Visually the prior would look like this:\n\n\nCode\n# Setting a plotting theme\n\nlibrary(ggplot2)\nlibrary(ggtext) # to be able to change the fonts etc in graphs\n\ntheme_set(theme_linedraw() +\n            theme(text = element_text(family = \"Times\", size = 8),\n                  panel.grid = element_blank(),\n                  plot.title = element_markdown())\n)\n\nPrior_betas &lt;- ggplot( ) +\n  stat_function(\n    fun = dnorm,    # We use the normal distribution\n    args = list(mean = 0, sd = 5.7), # \n    xlim = c(-15,15)\n  ) +\n  scale_y_continuous(name = \"density\") +\n  labs(title = \"Prior for the effects of independent variables\",\n       subtitle = \"N(0,5.7)\")\n\nPrior_betas\n\n\n\n\n\n\n\n\n\nNotice that even effects of -11 and 11 (almost effect sizes of -2 and 2) still get a decent amount of probability in our prior density function.\nLet’s set these priors and try to apply a pp_check(). Notice that I set the priors for all slopes (class = \"b\") at once.\n\n\nCode\nCustom_prior &lt;- c(\n  set_prior(\n    \"normal(0,5.7)\",\n    class = \"b\"\n  )\n)\n\nM3_priors &lt;- brm(\n  fluency ~ 1 + Occ2*FL + Occ2*MT + Occ3*FL + Occ3*MT + (1|student),\n  data = Subtitles,\n  cores = 4,\n  backend = \"cmdstanr\",\n  seed = 1975,\n  prior = Custom_prior,\n  sample_prior = \"only\"\n)\n\npp_check(M3_priors)\n\n\n\n\n\n\n\n\n\n\n\nThe simulated data goes all the way (light blue lines)! But it doesn’t generate extremely high or low observations and from this check we also learn that we have set quiet broad priors as they result in big differences between distributions of fluency based on the simulated datasets coming from our model with these priors.\nTime to apply these priors (that we somehow understand now) to estimate the real model.\n\n\nCode\nCustom_prior &lt;- c(\n  set_prior(\n    \"normal(0,5.7)\",\n    class = \"b\"\n  )\n)\n\nM3 &lt;- brm(\n  fluency ~ 1 + Occ2*FL + Occ2*MT + Occ3*FL + Occ3*MT + (1|student),\n  data = Subtitles,\n  cores = 4,\n  backend = \"cmdstanr\",\n  seed = 1975,\n  prior = Custom_prior\n  )"
+  },
+  {
+    "objectID": "Integrated_exercise/Exercise_response.html#subtask-2.2-did-the-model-converge-properly",
+    "href": "Integrated_exercise/Exercise_response.html#subtask-2.2-did-the-model-converge-properly",
+    "title": "Integrated excercise",
+    "section": "Subtask 2.2: did the model converge properly?",
+    "text": "Subtask 2.2: did the model converge properly?\nPerform different checks on the convergence of the model.\n\n Possible solution \nLet’s start by checking the trace-plots.\n\n\nCode\nlibrary(ggmcmc)\n\nModel_chains &lt;- ggs(M3b)\n\nModel_chains %&gt;%\n  filter(Parameter %in% c(\n    \"b_Intercept\",\n    \"b_FL\", \n    \"b_MT\", \n    \"b_Occ2\", \n    \"b_Occ3\",\n    \"b_FL:Occ2\",\n    \"b_FL:Occ3\",\n    \"b_MT:Occ2\",\n    \"b_MT:Occ3\"\n    )\n  ) %&gt;%\n  ggplot(aes(\n    x   = Iteration,\n    y   = value, \n    col = as.factor(Chain)))+\n  geom_line() +\n  facet_grid(Parameter ~ .,\n             scale  = 'free_y',\n             switch = 'y') +\n  labs(title = \"Caterpillar Plots for the parameters\",\n       col   = \"Chains\")\n\n\n\n\n\n\n\n\n\nLooking at the trace-plots, we can conclude that all chains mixed very well. This is already a first indication of successful convergence.\nNext, we can check the R-hat statistic for each of the parameters. With the following plot we get a visual overview of all the R-hat statistics (notice the large number of parameters, because we also have random effects in our model):\n\n\n\n\n\n\nNote\n\n\n\nIn the code below you can see that I first create a vector called Rhats to use in the mcmc_rhat() function. To create the vector I call the brms::rhat() function. By writing explicitly brms:: before the rhat() I make sure that the rhat() function from the package brms is used. I do this to avoid the use of another rhat() function that might be loaded by activating other packages and that results in incompatible results with the mcmc_rhat() function.\n\n\n\n\nCode\nlibrary(brms)\nlibrary(bayesplot)\n\n# Extract posterior draws as array (robust method)\nRhats &lt;- brms::rhat(M3b)\n\n# Plot with bayesplot\nmcmc_rhat(Rhats, size = 2) +\n  yaxis_text(hjust = 1)\n\n\n\n\n\n\n\n\n\nNone of the parameters shows a high R-hat statistic. They all are below the threshold of 1.05, indicating that all parameters converged well.\nTime to get insight in the amount of autocorrelation. A first check is plotting the ratio of the number of Effective Sample Sizes to the Total Sampel Sizes for all the parameters. Remember that this ratio should be above 0.1 to be sure that the amount of autocorrelation is acceptable. Following code gives a visual overview of these ratios.\n\n\nCode\nmcmc_neff(\n  neff_ratio(M3b)\n  ) + \n  yaxis_text(hjust = 1)\n\n\n\n\n\n\n\n\n\nFrom the plot we learn that for all the parameters the ratio is above 0.1. So, we can conclude that the amount of autocorrelation is not problematic for the estimation of any of the parameters."
+  },
+  {
+    "objectID": "Integrated_exercise/Exercise_response.html#subtask-2.3-does-the-posterior-distribution-histogram-have-enough-information",
+    "href": "Integrated_exercise/Exercise_response.html#subtask-2.3-does-the-posterior-distribution-histogram-have-enough-information",
+    "title": "Integrated excercise",
+    "section": "Subtask 2.3: does the posterior distribution histogram have enough information?",
+    "text": "Subtask 2.3: does the posterior distribution histogram have enough information?\nCheck if the posterior distribution histograms of the different parameters are informative enough to substantiate our inferences.\n\n Possible solution \nTo evaluate this, we create histograms based on the draws for our parameter values based on our model. We will apply this first for all main fixed effects.\n\n\nCode\nlibrary(patchwork)\n\nposterior_PD &lt;- as_draws_df(M3b)\n\npost_intercept &lt;- \n  posterior_PD %&gt;%\n  select(b_Intercept) %&gt;%\n  ggplot(aes(x = b_Intercept)) +\n  geom_histogram() +\n  ggtitle(\"Intercept\") \n\npost_Occ2 &lt;- \n  posterior_PD %&gt;%\n  select(b_Occ2) %&gt;%\n  ggplot(aes(x = b_Occ2)) +\n  geom_histogram() +\n  ggtitle(\"Beta Occ2\") \n\npost_Occ3 &lt;- \n  posterior_PD %&gt;%\n  select(b_Occ3) %&gt;%\n  ggplot(aes(x = b_Occ3)) +\n  geom_histogram() +\n  ggtitle(\"Beta Occ3\") \n\npost_FL &lt;- \n  posterior_PD %&gt;%\n  select(b_FL) %&gt;%\n  ggplot(aes(x = b_FL)) +\n  geom_histogram() +\n  ggtitle(\"Beta FL\") \n\npost_MT &lt;- \n  posterior_PD %&gt;%\n  select(b_MT) %&gt;%\n  ggplot(aes(x = b_MT)) +\n  geom_histogram() +\n  ggtitle(\"Beta MT\") \n\n\npost_intercept + post_Occ2 + post_Occ3 + post_FL + post_MT +\n  plot_layout(ncol = 3)\n\n\n\n\n\n\n\n\n\nThese plots show clear slopes and a peak, indicating that the posterior is informative enough for each of these parameters.\nNow, let’s do the same for the interaction effects.\n\n\nCode\npost_Occ2_FL &lt;- \n  posterior_PD %&gt;%\n  select(`b_Occ2:FL`) %&gt;%\n  ggplot(aes(x = `b_Occ2:FL`)) +\n  geom_histogram() +\n  ggtitle(\"Beta Occ2:FL\") \n\npost_Occ2_MT &lt;- \n  posterior_PD %&gt;%\n  select(`b_Occ2:MT`) %&gt;%\n  ggplot(aes(x = `b_Occ2:MT`)) +\n  geom_histogram() +\n  ggtitle(\"Beta Occ2:MT\") \n\npost_Occ3_FL &lt;- \n  posterior_PD %&gt;%\n  select(`b_FL:Occ3`) %&gt;%\n  ggplot(aes(x = `b_FL:Occ3`)) +\n  geom_histogram() +\n  ggtitle(\"Beta Occ3:FL\") \n\npost_Occ3_MT &lt;- \n  posterior_PD %&gt;%\n  select(`b_MT:Occ3`) %&gt;%\n  ggplot(aes(x = `b_MT:Occ3`)) +\n  geom_histogram() +\n  ggtitle(\"Beta Occ3:MT\") \n\npost_Occ2_FL + post_Occ2_MT + post_Occ3_FL + post_Occ3_MT +\n  plot_layout(ncol = 3)\n\n\n\n\n\n\n\n\n\nHere the conclusion is the same. These histograms show no problematic cases."
+  },
+  {
+    "objectID": "Integrated_exercise/Exercise_response.html#subtask-2.4-how-well-does-the-model-predict-the-observed-data",
+    "href": "Integrated_exercise/Exercise_response.html#subtask-2.4-how-well-does-the-model-predict-the-observed-data",
+    "title": "Integrated excercise",
+    "section": "Subtask 2.4: how well does the model predict the observed data?",
+    "text": "Subtask 2.4: how well does the model predict the observed data?\nPerform posterior predictive checks based on the model.\n\n Possible solutions \n\n\nCode\npp_check(M3b)\n\n\n\n\n\n\n\n\n\nLooking at the posterior probability checks, we can see that the distributions of simulated data show a strong resemblance to the distribution of the observed data. So, the conclusion could be that our model is performing quiet well."
+  },
+  {
+    "objectID": "Integrated_exercise/Exercise_response.html#subtask-2.5-what-about-prior-sensitivity-of-the-results",
+    "href": "Integrated_exercise/Exercise_response.html#subtask-2.5-what-about-prior-sensitivity-of-the-results",
+    "title": "Integrated excercise",
+    "section": "Subtask 2.5: what about prior sensitivity of the results?",
+    "text": "Subtask 2.5: what about prior sensitivity of the results?\nFinally, we have to check if the results of our model are not too dependent on the priors we specified in the model.\n\n\nCode\nlibrary(priorsense)\n\npowerscale_sensitivity(M3b)\n\n\nSensitivity based on cjs_dist:\n# A tibble: 47 × 4\n   variable               prior likelihood diagnosis          \n   &lt;chr&gt;                  &lt;dbl&gt;      &lt;dbl&gt; &lt;chr&gt;              \n 1 b_Intercept           0.0880      0.150 prior-data conflict\n 2 b_Occ2                0.101       0.242 prior-data conflict\n 3 b_FL                  0.110       0.166 prior-data conflict\n 4 b_MT                  0.0808      0.138 prior-data conflict\n 5 b_Occ3                0.127       0.276 prior-data conflict\n 6 b_Occ2:FL             0.129       0.285 prior-data conflict\n 7 b_Occ2:MT             0.108       0.271 prior-data conflict\n 8 b_FL:Occ3             0.153       0.372 prior-data conflict\n 9 b_MT:Occ3             0.116       0.272 prior-data conflict\n10 sd_student__Intercept 0.0192      0.719 -                  \n# ℹ 37 more rows\n\n\nWe learn from this prior sensitivity analyses that there is a prior-data conflict.\n\n\n\n\n\n\nNote\n\n\n\nIf we delve into the paper on the priorsense package we can read this paragraph:\n\nPrior-data conflict (Evans & Moshonov, 2006; Nott, Wang, et al., 2020; Walter & Augustin, 2009) can arise due to intentionally or unintentionally informative priors disagreeing with, but not being dominated by, the likelihood. When this is the case, the posterior will be sensitive to power-scaling both the prior and the likelihood, as illustrated in Figure 5. When prior-data conflict has been detected, the modeller may wish to modify the model by using a less informative prior (e.g., Evans & Jang, 2011; Nott, Seah, et al., 2020) or using heavy-tailed distributions (e.g., Gagnon, 2022; O’Hagan & Pericchi, 2012).\n\nReference: Kallioinen, N., Paananen, T., Bürkner, P.-C., & Vehtari, A. (2023). Detecting and diagnosing prior and likelihood sensitivity with power-scaling. Statistics and Computing, 34(1), 57. https://doi.org/10.1007/s11222-023-10366-5\n\n\nSo, it might imply that our priors are “unintentionally informative”. Let’s see what happens if we would stick to the default priors of brms. Given that the object called M3 contains the estimation of the model using the default priors we can quickly learn about the prior sensitivity of this model.\n\n\nCode\npowerscale_sensitivity(M3)\n\n\nSensitivity based on cjs_dist:\n# A tibble: 47 × 4\n   variable                 prior likelihood diagnosis\n   &lt;chr&gt;                    &lt;dbl&gt;      &lt;dbl&gt; &lt;chr&gt;    \n 1 b_Intercept           0.00283      0.0603 -        \n 2 b_Occ2                0.000612     0.128  -        \n 3 b_FL                  0.00104      0.0596 -        \n 4 b_MT                  0.00118      0.0606 -        \n 5 b_Occ3                0.000393     0.124  -        \n 6 b_Occ2:FL             0.000629     0.147  -        \n 7 b_Occ2:MT             0.000578     0.142  -        \n 8 b_FL:Occ3             0.000427     0.137  -        \n 9 b_MT:Occ3             0.000400     0.127  -        \n10 sd_student__Intercept 0.00617      0.502  -        \n# ℹ 37 more rows\n\n\nLooking at this prior sensitivity check we learn that using the default priors makes the model less sensitive to the priors used!\n“What to do now?”\nWell, in my opinion there is not a single best way to deal with this situation. What I would do first is compare the results based on both models (M3 and M3b). Let’s print the parameter estimates of both models. To do this I rely on the tab_model() function from the very helpful package sjPlot (so, do not forget to install that one if you want to use it!), as it allows me to show the results of both models side-to-side.\n\n\n\n\n \nM3 (brms default priors)\nM3b (custom priors)\n\n\nPredictors\nEstimates\nCI (95%)\nEstimates\nCI (95%)\n\n\nIntercept\n102.60\n100.31 – 104.92\n101.75\n99.68 – 103.80\n\n\nOcc2\n-0.29\n-2.83 – 2.16\n0.79\n-1.58 – 3.12\n\n\nFL\n-2.39\n-5.77 – 0.73\n-0.99\n-3.96 – 1.94\n\n\nMT\n-1.40\n-4.61 – 1.85\n-0.22\n-3.14 – 2.78\n\n\nOcc3\n2.50\n-0.00 – 4.94\n3.78\n1.42 – 6.17\n\n\nOcc2:FL\n7.08\n3.47 – 10.59\n5.30\n1.87 – 8.66\n\n\nOcc2:MT\n8.07\n4.57 – 11.51\n6.44\n3.12 – 9.57\n\n\nFL:Occ3\n17.15\n13.53 – 20.66\n14.87\n11.46 – 18.20\n\n\nMT:Occ3\n8.84\n5.32 – 12.49\n7.09\n3.68 – 10.26\n\n\nRandom Effects\n\n\n\nσ2\n5.17\n5.08\n\n\n\nτ00\n46.78\n44.88\n\n\nICC\n0.10\n0.10\n\n\nN\n36 student\n36 student\n\nObservations\n108\n108\n\n\nMarginal R2 / Conditional R2\n0.709 / 0.816\n0.695 / 0.803\n\n\n\n\n\n\nThis table clearly demonstrates how the model making use of the default priors has different results than the model with the priors we had set ourselves!\nIf we think about this more profoundly this doesn’t have to come as a surprise! The priors used for the effect of Occasion was maybe nonsense. Why not assuming that students got more fluent over the time course of 26 weeks? To be fairly honest, I deliberately used these priors that seemed uninformative so that we would - for didactical reasons - run into this issue ;-)!\nFor the rest of the exercise we will stick to the results of the model with default priors. But, another option could be to change our custom priors, mimicking the idea that we expect students to become more fluent on the course of 26 weeks. That’s what I actually did in a blogpost that I wrote about using the priorsense package that can be found here: https://sdemaeyer.quarto.pub/posts/2024-02-PriorSense/PriorSensePost.html"
   }
 ]
