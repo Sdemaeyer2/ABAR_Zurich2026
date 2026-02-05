@@ -901,6 +901,12 @@ knitr::include_graphics("cover_Lambert.jpg")
 knitr::include_graphics("cover_rethinking2.jpg")
 ```
 
+## Some books `r fontawesome::fa("book")` 
+
+"Regression and Other Stories" by Andrew Gelman, Jennifer Hill and Aki Vethari
+
+<https://avehtari.github.io/ROS-Examples/index.html>
+
 ## Some free online books `r fontawesome::fa("book")`
 
 -   Bayes Rules!:
