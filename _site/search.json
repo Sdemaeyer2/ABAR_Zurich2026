@@ -438,7 +438,7 @@
     "href": "Presentations/Part3/Slides_Part3.html#your-turn",
     "title": "Applied Bayesian Analyses in R",
     "section": " Your Turn",
-    "text": "Your Turn\n\nOpen WritingData.RData\nEstimate 3 models with SecondVersion as dependent variable\n\nM1: fixed effect of FirstVersion_GM + random effect of Class ((1|Class))\nM2: M1 + random effect of FirstVersion_GM ((1 + FirstVersion_GM |Class))\nM3: M2 + fixed effect of Experimental_condition\n\nCompare the models on their fit\nWhat do we learn?\nMake a summary of the best fitting model\n\n\n\nNote: FirstVersion_GMis the score of the pretest centred around the mean, so a score 0 for this variable implies scoring on average for the pretest"
+    "text": "Your Turn\n\nOpen WritingData.RData\nEstimate 3 models with SecondVersion as dependent variable\n\nM1: fixed effect of FirstVersion_GM + random effect of Class ((1|Class))\nM2: M1 + random effect of FirstVersion_GM ((1 + FirstVersion_GM |Class))\nM3: M2 + fixed effect of Experimental_condition\n\nCompare the models on their fit\nMake a summary of the best fitting model/ What do we learn?\n\n\n\nNote: FirstVersion_GMis the score of the pretest centred around the mean, so a score 0 for this variable implies scoring on average for the pretest"
   },
   {
     "objectID": "Presentations/Part3/Slides_Part3.html#divergent-transitions",

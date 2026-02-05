@@ -65,7 +65,7 @@ theme_set(theme_linedraw() +
 knitr::include_graphics(here("Presentations", "Part3","WritingDataDesc.jpg"))
 ```
 
-## `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#447099" transition="slide-in"}
+## `r fontawesome::fa("laptop-code", "white")` Your Turn {background-color="#82654f" transition="slide-in"}
 
 -   Open `WritingData.RData`
 
@@ -77,9 +77,7 @@ knitr::include_graphics(here("Presentations", "Part3","WritingDataDesc.jpg"))
 
 -   Compare the models on their fit
 
--   What do we learn?
-
--   Make a summary of the best fitting model
+-   Make a summary of the best fitting model/ What do we learn?
 
 ::: aside
 [Note:]{style="color: white"} `FirstVersion_GM`[is the score of the pretest centred around the mean, so a score 0 for this variable implies scoring on average for the pretest]{style="color: white"}
